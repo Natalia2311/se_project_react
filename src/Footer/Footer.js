@@ -4,7 +4,7 @@ const Footer =() => {
     return (
         <footer className="footer">
         <div>
-          Developed by Natalia Semenova
+          Developed by NS
         </div>
         <div>
           2024
