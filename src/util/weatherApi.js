@@ -18,8 +18,8 @@ export const getForecastWeather =() => {
 };
 
 export const parseWeatherData = (data) => {
-    const main = data.main.temp;
-    const temperature = main && main[0].temp;
+    const main = data.main;
+    const temperature = main && data.main.temp;
     console.log(Math.ceil(temperature));
     return Math.ceil(temperature);
 }
