@@ -5,7 +5,9 @@ import Footer from "./Footer/Footer";
 import ModalWithForm from "./ModalWithForm/ModalWithForm";
 import { useState, useEffect } from "react";
 import ItemModal from "./ItemModal/ItemModal";
-import { getForecastWeather, parseWeatherData } from './util/weatherApi';
+import { getForecastWeather, parseWeatherData, parseLoacation } from './util/weatherApi';
+import "./fonts/fonts.css";
+
 
 
 function App() {
@@ -13,6 +15,7 @@ function App() {
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState ({});
   const [temp, setTemp] = useState(0);
+  const [location, setLocation] = useState("");
 
   const handleCreateModal = () => {
     setActiveModal('create');
@@ -31,13 +34,16 @@ function App() {
     getForecastWeather().then((data) => {
     const temperature = parseWeatherData(data);
     setTemp(temperature);
+    const city = parseLoacation(data);
+    setLocation(city);
     });
   }, []);
 
 
+
   return (
-    <div>
-      <Header onCreateModal={handleCreateModal} temp={temp} />
+    <div className="page">
+      <Header onCreateModal={handleCreateModal} temp={temp} location={location} />
       <Main weatherTemp={temp} onSelectCard={handleSelectedCard} temp={temp} />
       <Footer />
       {activeModal === "create" && (
@@ -66,10 +72,10 @@ function App() {
           </div>
         </div>
       </ModalWithForm>
-      )};
-     {activeModal === "preview" && <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />};
+      )}
+     {activeModal === "preview" && <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />}
     </div>
-  );
+  )
 };
 
 export default App;

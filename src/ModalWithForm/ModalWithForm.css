@@ -14,6 +14,40 @@
     background-color: white;
     max-width: 496px;
     width: 100%;
-    border-radius: 20px;
-    padding: 34px 36px;
+    border-radius: 12px;
+    padding: 28px 36px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 436px;
+    border: 1px solid rgba(0, 0, 0, 0.30);
+   
+
+
+
 }
+
+.modal__form {
+display: flex;
+flex-direction: column;
+}
+
+.form__button {
+    background-image: url("../images/close.svg");
+    border: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent; 
+    
+
+}
+
+
+/*bottom-border: 1px solid rgb(0, 0, 0)
+.modal__input-radio:has(:checked) {*/
+
+
