@@ -7,7 +7,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rdba(0,0,0, 0.5);
+    background: rgba(0, 0, 0, 0.30);
 }
 
 .modal__content {
@@ -23,10 +23,14 @@
     height: 436px;
     border: 1px solid rgba(0, 0, 0, 0.30);
     position: relative;
-
-
+    font-family: "CabinetGrotesk-Medium";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 16px
 
 }
+
 
 .modal__form {
 display: flex;
@@ -63,7 +67,7 @@ flex-direction: column;
 
 .modal__label {
     position: relative;
-    font-family: "CabinetGrotesk-Bold";
+    font-family: "CabinetGrotesk-Medium";
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
@@ -73,17 +77,17 @@ flex-direction: column;
 
 .weather__type-text {
   color: #000;
-  font-family: "CabinetGrotesk-Bold";
+  font-family: "CabinetGrotesk-Medium";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 20px;
-  margin-bottom: 12px;
+  
 }
 
 .modal__input {
   color: rgba(0, 0, 0, 0.50);
-  font-family: "CabinetGrotesk-Bold";
+  font-family: "CabinetGrotesk-Medium";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -101,7 +105,7 @@ flex-direction: column;
   background: rgba(0, 0, 0, 0.30);
   color: white;
   border: none;
-  font-family: "CabinetGrotesk-Bold";
+  font-family: "CabinetGrotesk-Regular";
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -117,15 +121,13 @@ flex-direction: column;
   display: flex;
   flex-direction: column;
   gap: 8px;
+  accent-color: #000;
 }
 
-.modal__input-radio {
-  stroke-width: 1px;
-  
-}
 
-.modal__input-radio:has(:checked)  {
-  color: #000;
+
+.modal__input-radio:checked ~ label {
+   color: #000;
   
 }
 

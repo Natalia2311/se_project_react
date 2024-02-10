@@ -55,7 +55,7 @@ function App() {
         </label>
         <label className="modal__label">
           Image
-          <input className="modal__form-input" type="url" name="link" minLength="1" maxLength="30" placeholder="Image URL" />
+          <input className="modal__form-input" type="url" name="link" minLength="1" maxLength="300" placeholder="Image URL" />
         </label>
         <div className='weather__type-text'>
         Select the weather type:
