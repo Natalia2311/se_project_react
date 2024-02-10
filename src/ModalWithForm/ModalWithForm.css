@@ -114,6 +114,9 @@ flex-direction: column;
 
 .modal__radio {
   margin: 12px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .modal__input-radio {

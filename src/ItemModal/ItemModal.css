@@ -1,0 +1,29 @@
+
+.item__button-close {
+    background-image: url("../images/close.svg");
+    border: none;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent; 
+    top: 20px;
+    right: 28px;
+    color: white;
+  
+
+}
+
+.modal__content-item {
+    background-color: white;
+    max-width: 498px;
+    height: 610px;
+    width: 100%;
+    border-radius: 16px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
