@@ -48,29 +48,33 @@ function App() {
       <Footer />
       {activeModal === "create" && (
       <ModalWithForm title="New Garment" onClose={handleCloseModal}>
-        <label>
+        
+        <label className="modal__label">
           Name 
-          <input type="text" name="name" minLength="1" maxLength="30" />
+          <input className="modal__form-input" type="text" name="name"  minLength="1" maxLength="30" placeholder="Name"/>
         </label>
-        <label>
+        <label className="modal__label">
           Image
-          <input type="url" name="link" minLength="1" maxLength="30" />
+          <input className="modal__form-input" type="url" name="link" minLength="1" maxLength="30" placeholder="Image URL" />
         </label>
-        <p>Select the weather type:</p>
-        <div>
+        <div className='weather__type-text'>
+        Select the weather type:
+        </div>
+        <div className='modal__radio'>
           <div>
-            <input type="radio" name="weatherType" id="hot" value="hot" />
-            <label> Hot</label>
+            <input type="radio" name="weatherType" id="hot" value="hot" className='modal__input-radio'/>
+            <label className='modal__input'> Hot</label>
           </div>
           <div>
-            <input type="radio" name="weatherType" id="warm" value="warm" />
-            <label> Warm</label>
+            <input type="radio" name="weatherType" id="warm" value="warm" className='modal__input-radio'/>
+            <label className='modal__input'> Warm</label>
           </div>
           <div>
-            <input type="radio" name="weatherType" id="cold" value="cold" />
-            <label> Cold</label>
+            <input type="radio" name="weatherType" id="cold" value="cold" className='modal__input-radio' />
+            <label className='modal__input'> Cold</label>
           </div>
         </div>
+       
       </ModalWithForm>
       )}
      {activeModal === "preview" && <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />}

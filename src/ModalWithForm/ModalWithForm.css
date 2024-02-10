@@ -15,14 +15,14 @@
     max-width: 496px;
     width: 100%;
     border-radius: 12px;
-    padding: 28px 36px;
+    padding: 28px 28px 28px 36px;
     box-sizing: border-box;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     height: 436px;
     border: 1px solid rgba(0, 0, 0, 0.30);
-   
+    position: relative;
 
 
 
@@ -31,23 +31,98 @@
 .modal__form {
 display: flex;
 flex-direction: column;
+
 }
 
-.form__button {
+.form__button-close {
     background-image: url("../images/close.svg");
     border: none;
-    position: relative;
+    position: absolute;
     width: 20px;
     height: 20px;
     background-repeat: no-repeat;
     background-size: contain;
     background-color: transparent; 
-    
+    top: 20px;
+    right: 28px;
+
 
 }
 
+.modal__form-input {
+  width: 100%;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-top-style: hidden;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.50);
+  padding-top: 8px;
+  
+}
 
-/*bottom-border: 1px solid rgb(0, 0, 0)
-.modal__input-radio:has(:checked) {*/
+.modal__label {
+    position: relative;
+    font-family: "CabinetGrotesk-Bold";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 20px;
+    font-size: 16px;
+    padding-bottom: 24px;
+  }
 
+.weather__type-text {
+  color: #000;
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 12px;
+}
+
+.modal__input {
+  color: rgba(0, 0, 0, 0.50);
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+ 
+}
+
+.modal__submit-button {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.30);
+  color: white;
+  border: none;
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  width: 124px;
+  height: 36px;
+
+
+}
+
+.modal__radio {
+  margin: 12px 0 32px;
+}
+
+.modal__input-radio {
+  stroke-width: 1px;
+  
+}
+
+.modal__input-radio:has(:checked)  {
+  color: #000;
+  
+}
 
