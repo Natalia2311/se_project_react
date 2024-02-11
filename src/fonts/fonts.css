@@ -1,24 +1,17 @@
+@font-face {
+  src: url("./CabinetGrotesk-Bold.woff") format("woff");
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+}
 
+@font-face {
+  src: url("./CabinetGrotesk-Medium.woff") format("woff");
+  font-family: "CabinetGrotesk-Medium";
+  font-weight: 700;
+}
 
-  @font-face {
-    src: url("./CabinetGrotesk-Bold.woff") format('woff'); 
-    font-family: 'CabinetGrotesk-Bold';
-    font-weight: 700;
-      
-  }
-  
-  @font-face { 
-   src: url('./CabinetGrotesk-Medium.woff') format('woff');
-   font-family: 'CabinetGrotesk-Medium';
-   font-weight: 700;
-  }
-
-
-  @font-face {
-    src: url("./CabinetGrotesk-Regular.woff") format('woff'); 
-    font-family: 'CabinetGrotesk-Regular';
-    font-weight: 700;
-      
-  }
-
- 
+@font-face {
+  src: url("./CabinetGrotesk-Regular.woff") format("woff");
+  font-family: "CabinetGrotesk-Regular";
+  font-weight: 700;
+}
