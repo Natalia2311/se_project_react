@@ -13,15 +13,18 @@ const weatherOptions = [
     { url: require ("../images/day/storm.svg").default, day: false, type: "storm" },
 ];
 
-const WeatherCard = ({ day, type, weatherTemp = "" }) => {
+const WeatherCard = ({ day, type = "cloudy", weatherTemp = "" }) => {
     console.log("weather card");
-    const imageSrc = weatherOptions.filter((i) => {
+    const imageSrc = weatherOptions.find((i) => {
       
         return i.day === day && i.type === type;
+   const currentWeather = weatherOptions.find((condition) => {
+    return condition.day === day && condition.type === type;
+ }); 
     });
  
      
-    const imageSrcUrl = imageSrc[0].url || "";
+    const imageSrcUrl = imageSrc.url || "";
     return (
         <section className='weather' id="weather">
           <div className="weather_info">{weatherTemp}°F</div>
@@ -29,4 +32,6 @@ const WeatherCard = ({ day, type, weatherTemp = "" }) => {
         </section>
     )
 }
+
+ 
     export default WeatherCard;

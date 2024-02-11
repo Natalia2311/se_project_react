@@ -1,6 +1,6 @@
 import './Header.css';
-
-
+import avatar from "../images/avatar.svg";
+import logo from "../images/logo.svg";
 
 function getDate() {
   const currectDate = new Date().toLocaleDateString("default", {
@@ -18,7 +18,7 @@ function getDate() {
           <header className="header">
           <div className="header__logo">
           <div>
-            <img src={require ("../images/logo.svg").default} alt="logo" />
+            <img src={logo} alt="logo" />
             </div>    
             <div className="date">{getDate()},</div>
             <div className="location">{location}</div>  
@@ -28,7 +28,7 @@ function getDate() {
                 <button type="text" className="button" onClick={onCreateModal}>+ Add сlothes</button>
                 </div>     
                 <div className="username">Terrence Tegegne</div>
-                <div><img src="./images/avatar.svg" alt="logo" /></div>
+                <div><img src={avatar} alt="logo" /></div>
                 </div>
           </header>
        

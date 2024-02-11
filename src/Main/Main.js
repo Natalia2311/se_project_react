@@ -21,7 +21,9 @@ console.log(weatherType);
 const filteredCards = defaultClothingItems.filter((item) => {
   console.log(item);
   return item.weather.toLowerCase() === weatherType;
+  return conditions.toLowerCase() === currentTime;
 });
+
 
 return (
 <main className="main">
@@ -37,5 +39,7 @@ return (
 </main>
 );
 }
+
+
  
 export default Main;  

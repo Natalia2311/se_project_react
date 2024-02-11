@@ -10,12 +10,15 @@ import "./fonts/fonts.css";
 
 
 
+
 function App() {
   const weatherTemp = "86";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState ({});
   const [temp, setTemp] = useState(0);
   const [location, setLocation] = useState("");
+  const [weather, setWeather] = useState("");
+  const [day, setDay] = useState(null);
 
   const handleCreateModal = () => {
     setActiveModal('create');
@@ -36,10 +39,23 @@ function App() {
     setTemp(temperature);
     const city = parseLoacation(data);
     setLocation(city);
-    });
+    }).catch((err) => {console.log(err)});
   }, []);
 
-
+ useEffect(() => {
+  getForecastWeather().then((conditions) => {
+    setTemp(conditions.temp);
+    setWeather(conditions.condition);
+    if (
+      conditions.time > conditions.sunrise &&
+      conditions.time < conditions.sunset
+    ) {
+      setDay(true);
+    } else {
+      setDay(false);
+    }
+  });
+ }, []);
 
   return (
     <div className="page">
