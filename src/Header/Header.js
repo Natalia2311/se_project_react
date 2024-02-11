@@ -28,7 +28,7 @@ function getDate() {
                 <button type="text" className="button" onClick={onCreateModal}>+ Add сlothes</button>
                 </div>     
                 <div className="username">Terrence Tegegne</div>
-                <div><img src="/images/avatar.svg" alt="logo" /></div>
+                <div><img src="./images/avatar.svg" alt="logo" /></div>
                 </div>
           </header>
        
