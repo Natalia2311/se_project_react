@@ -10,7 +10,7 @@ import {
   parseWeatherData,
   parseLoacation,
 } from "./util/weatherApi";
-import "./fonts/fonts.css";
+import "./vendor/fonts.css";
 
 function App() {
   const weatherTemp = "86";
