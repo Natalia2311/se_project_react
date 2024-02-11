@@ -18,17 +18,19 @@ const WeatherCard = ({ day, type = "cloudy", weatherTemp = "" }) => {
     const imageSrc = weatherOptions.find((i) => {
       
         return i.day === day && i.type === type;
-   const currentWeather = weatherOptions.find((condition) => {
-    return condition.day === day && condition.type === type;
- }); 
+   
     });
+
+    const currentWeather = weatherOptions.find((condition) => {
+        return condition.day === day && condition.type === type;
+     }); 
  
-     
+    
     const imageSrcUrl = imageSrc.url || "";
     return (
         <section className='weather' id="weather">
           <div className="weather_info">{weatherTemp}°F</div>
-          <img src={imageSrcUrl} className="weather_image" />
+          <img src={imageSrcUrl}  className="weather_image" />
         </section>
     )
 }

@@ -39,12 +39,6 @@ function App() {
     setTemp(temperature);
     const city = parseLoacation(data);
     setLocation(city);
-    }).catch((err) => {console.log(err)});
-  }, []);
-
- useEffect(() => {
-  getForecastWeather().then((conditions) => {
-    setTemp(conditions.temp);
     setWeather(conditions.condition);
     if (
       conditions.time > conditions.sunrise &&
@@ -54,9 +48,11 @@ function App() {
     } else {
       setDay(false);
     }
-  });
- }, []);
+    
+    }).catch((err) => {console.log(err)});
+  }, []);
 
+ 
   return (
     <div className="page">
       <Header onCreateModal={handleCreateModal} temp={temp} location={location} />

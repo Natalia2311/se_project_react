@@ -38,15 +38,3 @@ export const parseLoacation = (data) => {
     return city;
 }
 
-//const [sunrise, setSunrise] = React.useState(1698361876141);
-//const [sunset, setSunset] = React.useState(1698361876141);  
-// const [weatherId, setWeatherId] = React.useState(400); 
-//const currentWeatherUrl = currentWeather?.url;
-
-// const currentWeather = weatherList.find((condition) => {
-//     return condition.isDay === isDay && condition.type === type;
-//   }); 
-//src={require(`../../images/conditions/${this.day ? 'day' : 'night'}-${this.type}.svg`).default}
-//so if the expression data?.timezone > data?.sys.sunrise && data?.timezone < data?.sys.sunset is true, 
-//then we call setDay(true), otherwise we call setDay(false)
-//Changing weather cards by time of day and current conditions
