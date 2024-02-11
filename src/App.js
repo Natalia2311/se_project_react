@@ -9,7 +9,7 @@ import {
   getForecastWeather,
   parseWeatherData,
   parseLoacation,
-} from "./util/weatherApi";
+} from "./utils/weatherApi";
 import "./vendor/fonts.css";
 
 function App() {
