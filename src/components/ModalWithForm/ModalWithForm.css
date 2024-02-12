@@ -36,7 +36,7 @@
 }
 
 .form__button-close {
-  background-image: url("../images/close.svg");
+  background-image: url("../../images/close.svg");
   border: none;
   position: absolute;
   width: 20px;

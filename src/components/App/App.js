@@ -1,4 +1,4 @@
-import "../App.css";
+import "../App/App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
@@ -9,8 +9,8 @@ import {
   getForecastWeather,
   parseWeatherData,
   parseLoacation,
-} from "./utils/weatherApi";
-import "./vendor/fonts.css";
+} from "../../utils/weatherApi";
+import "../../vendor/fonts.css";
 
 function App() {
   const weatherTemp = "86";
