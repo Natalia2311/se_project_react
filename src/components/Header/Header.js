@@ -28,7 +28,7 @@ const Header = ({ onCreateModal, location }) => {
             + Add сlothes
           </button>
         </div>
-        <div className="username">Terrence Tegegne</div>
+        <p className="username">Terrence Tegegne</p>
         <div>
           <img src={avatar} alt="logo" />
         </div>

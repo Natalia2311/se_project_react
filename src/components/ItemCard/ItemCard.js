@@ -5,14 +5,15 @@ const ItemCard = ({ item, onSelectCard }) => {
     <div className="card__container">
       <div>
         <img
-          src={item.link}
-          className="card_image"
+          src={item.link} alt="card image"
+          className="card__image"
           onClick={() => onSelectCard(item)}
         />
       </div>
-      <div className="card_name"> {item.name} </div>
+      <p className="card_name"> {item.name} </p>
     </div>
   );
 };
 
 export default ItemCard;
+

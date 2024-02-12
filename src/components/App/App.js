@@ -81,6 +81,7 @@ function App() {
           <div className="weather__type-text">Select the weather type:</div>
           <div className="modal__radio">
             <div>
+            <label className="modal__input"> Hot
               <input
                 type="radio"
                 name="weatherType"
@@ -88,9 +89,10 @@ function App() {
                 value="hot"
                 className="modal__input-radio"
               />
-              <label className="modal__input"> Hot</label>
+              </label>
             </div>
             <div>
+            <label className="modal__input"> Warm
               <input
                 type="radio"
                 name="weatherType"
@@ -98,9 +100,10 @@ function App() {
                 value="warm"
                 className="modal__input-radio"
               />
-              <label className="modal__input"> Warm</label>
+              </label>
             </div>
             <div>
+            <label className="modal__input"> Cold
               <input
                 type="radio"
                 name="weatherType"
@@ -108,7 +111,7 @@ function App() {
                 value="cold"
                 className="modal__input-radio"
               />
-              <label className="modal__input"> Cold</label>
+              </label>
             </div>
           </div>
         </ModalWithForm>

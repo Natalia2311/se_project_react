@@ -9,7 +9,7 @@ const ModalWithForm = ({
 }) => {
   console.log("ModalWithForm");
   return (
-    <div className={"modal modal_type_${name}"}>
+    <div className={`modal modal_type_${name}`}>
       <div className="modal__content">
         <button type="button" className="form__button-close" onClick={onClose}>
           {" "}
