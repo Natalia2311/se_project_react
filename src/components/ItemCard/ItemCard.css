@@ -1,4 +1,4 @@
-.card_name {
+.card__name {
   text-align: center;
   color: rgba(0, 0, 0, 0.6);
   font-family: "CabinetGrotesk-Bold";
@@ -18,7 +18,7 @@
   justify-content: center;
 }
 
-.card_image {
+.card__image {
   width: 328px;
   height: 328px;
   border-radius: 19px;
