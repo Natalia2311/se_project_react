@@ -88,7 +88,8 @@ function App() {
                 id="hot"
                 value="hot"
                 className="modal__input-radio"
-              /> Hot
+              /> 
+               <span>Hot</span>
               </label>
             </div>
             <div>
@@ -99,7 +100,8 @@ function App() {
                 id="warm"
                 value="warm"
                 className="modal__input-radio"
-              /> Warm
+              /> 
+              <span>Warm</span>
               </label>
             </div>
             <div>
@@ -110,7 +112,8 @@ function App() {
                 id="cold"
                 value="cold"
                 className="modal__input-radio"
-              /> Cold
+              /> 
+              <span>Cold</span>
               </label>
             </div>
           </div>
