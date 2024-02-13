@@ -114,6 +114,6 @@
   accent-color: #000;
 }
 
-.modal__input-radio:checked ~ label {
-  color: #000;
+.modal__input-radio :checked ~ label {
+  color: black;
 }
