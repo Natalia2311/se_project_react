@@ -41,3 +41,13 @@
   height: 498px;
   border-radius: 16px 16px 0 0;
 }
+
+.card__modal-delete {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #FF4D00;
+  
+}

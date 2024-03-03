@@ -3,9 +3,15 @@
     display: flex;
     flex-wrap: wrap;
     gap: 16px;
-
     margin-left: 384px;
     
+}
 
-
+.clothes__section {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
