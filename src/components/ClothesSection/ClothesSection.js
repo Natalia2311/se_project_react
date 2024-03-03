@@ -1,7 +1,7 @@
  import ItemCard from "../ItemCard/ItemCard";
  import "../Profile/Profile.css";
 
- const ClothesSection = ({  clothingItems, handleCreateModal, onSelectCard }) => {
+ const ClothesSection = ({  cards, handleCreateModal, onSelectCard }) => {
     return (
         <div classname="clothes__section">
             <div className="clothes__section">
@@ -14,13 +14,13 @@
                  + Add New
                  </button>                
             </div>
-            <div className="clothes__items">
-                { clothingItems.map((item) => {
+            <ul className="clothes__items">
+                {cards.map((card) => {
                     return (
-                        <ItemCard key={item._id} item={item} onSelectCard={onSelectCard} />
+                        <ItemCard key={card._id} item={card} onSelectCard={onSelectCard} />
                     );
                 })}
-            </div>
+            </ul>
         </div>
     );
  };

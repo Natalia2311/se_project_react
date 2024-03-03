@@ -118,7 +118,7 @@ function App() {
         <Profile
         onSelectCard={handleSelectedCard}
         onCreateModal={handleCreateModal}
-        clothingItems={clothingItems}
+        cards={clothingItems}
         />
       </Route>
       </Switch>  
