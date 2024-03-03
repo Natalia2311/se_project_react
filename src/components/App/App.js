@@ -44,13 +44,13 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleDeleteCard = (id) => {
-    deleteItems(id)
-    .then(() => {
-    console.lod(id);
-    });
-   }
-  deleteItems();
+  // const handleDeleteCard = (id) => {
+  //   deleteItems(id)
+  //   .then(() => {
+  //   console.lod(id);
+  //   });
+  //  }
+  // deleteItems();
 
 
 
