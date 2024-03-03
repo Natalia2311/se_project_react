@@ -1,9 +1,10 @@
  import ItemCard from "../ItemCard/ItemCard";
- import "../Profile/Profile.css";
+  import "../Profile/Profile.css";
+ import "../ClothesSection/ClothesSection.css";
 
  const ClothesSection = ({  cards, handleCreateModal, onSelectCard }) => {
     return (
-        <div classname="clothes__section">
+        <div className="clothes__section">
             <div className="clothes__section">
                 <p className="clothes__title">Your items</p>
                 <button 

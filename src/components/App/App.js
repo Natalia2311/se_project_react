@@ -64,7 +64,7 @@ function App() {
     addItem(item)
     .then((res) => {
       console.log(res);
-      setClothingItems([item, ...clothingItems]);
+      setClothingItems([res, ...clothingItems]);
     })
     .catch((err) => {
       console.log(err);
@@ -80,6 +80,7 @@ function App() {
   const onAddItem =(values) => {
     console.log(values);
     // console.log(e.target.value);
+    handleCloseModal();
   }
 
   useEffect(() => {
@@ -93,10 +94,14 @@ function App() {
       .catch((err) => {
         console.log(err);
       });
-      getItemsList()
-      .then((items) => {
-        setClothingItems(items);
-      })
+      getItemsList() 
+  .then((res) => {
+    setClothingItems(res);
+  })
+      // getItemsList()
+      // .then((items) => {
+      //   setClothingItems(items);
+      // })
       .catch((err) => {
         console.log(err);
       });

@@ -14,22 +14,7 @@ const Profile = ({ cards, handleCreateModal, onSelectCard }) => {
                 cards={cards}
                 onSelectCard={onSelectCard}
                 handleCreateModal={handleCreateModal} />
-                <section className="cards">
-                    <ul className="cards__list">
-                        {cards.map((card) => (
-                            <ItemCard
-                            key={card._id}
-                            name={card.name}
-                            item={card}
-                            id={card.id}
-                            weather={card.weather}
-                            link={card.link}
-                            handleCreateModal={handleCreateModal} />
-
-                        ))}
-                    </ul>
-                </section>
-
+               
             </div>
         </div>
     );
