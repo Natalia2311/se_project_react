@@ -47,7 +47,7 @@ function App() {
   const handleDeleteCard = (card) => {
     deleteItems(card._id)
     .then(() => {
-    console.lod(id);
+    console.lod(card._id);
     });
    }
   deleteItems();
