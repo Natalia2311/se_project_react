@@ -44,13 +44,13 @@ function App() {
     setSelectedCard(card);
   };
 
-  // const handleDeleteCard = (id) => {
-  //   deleteItems(id)
-  //   .then(() => {
-  //   console.lod(id);
-  //   });
-  //  }
-  // deleteItems();
+  const handleDeleteCard = (card) => {
+    deleteItems(card._id)
+    .then(() => {
+    console.lod(id);
+    });
+   }
+  deleteItems();
 
 
 
@@ -129,7 +129,7 @@ function App() {
       </Switch>  
       <Footer />
       {activeModal === "create" && <AddItemModal handleCloseModal={handleCloseModal} isOpen={activeModal === "create"} 
-      onAddItem={onAddItem}/>}
+      onAddItem={handleAddItemSubmit}/>}
       {activeModal === "preview" && (
         <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
       )}

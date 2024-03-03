@@ -27,7 +27,7 @@ export function addItem({ name, weather, imageUrl }) {  //values
 };
 
 export function deleteItems(_id) {
-    return fetch(`${baseUrl}/items/${_id}`, {
+    return fetch(`${baseUrl}/items/:${_id}`, {
         method: "DELETE",
         headers: headers,
 }).then(handleResponse);
