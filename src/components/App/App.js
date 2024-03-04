@@ -138,7 +138,7 @@ function App() {
       {activeModal === "create" && <AddItemModal handleCloseModal={handleCloseModal} isOpen={activeModal === "create"} 
       onAddItem={handleAddItemSubmit}/>}
       {activeModal === "preview" && (
-        <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} onClick={handleDeleteCard} />
+        <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} onConfirm={handleDeleteCard} />
       )}
       
       </CurrentTemperatureUnitContext.Provider>

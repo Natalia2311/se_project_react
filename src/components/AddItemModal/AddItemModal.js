@@ -25,7 +25,7 @@ const handleWeatherType = (e) => {
 
 const handleSubmit = (e) => {
   e.preventDefault();
-  onAddItem();
+  onAddItem({ name, imageUrl, weather });
 };
 
     return (
