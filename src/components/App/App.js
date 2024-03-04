@@ -71,7 +71,7 @@ function App() {
     addItem(item)
     .then((res) => {
       console.log(res);
-      setClothingItems([res, ...clothingItems]);
+      setClothingItems([item, ...clothingItems]);
     })
     .catch((err) => {
       console.log(err);
