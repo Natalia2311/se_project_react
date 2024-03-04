@@ -44,13 +44,20 @@ function App() {
     setSelectedCard(card);
   };
 
-  const handleDeleteCard = (card) => {
-    deleteItems(card._id)
+  const handleDeleteCard = () => {
+    deleteItems(selectedCard._id)
     .then(() => {
-    console.lod(card._id);
+    const newItemList =
+    clothingItems.filter((item) => {
+      return item._id !== selectedCard._id;
     });
-   }
-  deleteItems();
+    setClothingItems(newItemList);
+    handleCloseModal();
+     }).catch((err) => {
+      console.log(err);
+     });
+   };
+ 
 
 
 
@@ -131,7 +138,7 @@ function App() {
       {activeModal === "create" && <AddItemModal handleCloseModal={handleCloseModal} isOpen={activeModal === "create"} 
       onAddItem={handleAddItemSubmit}/>}
       {activeModal === "preview" && (
-        <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+        <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} onClick={handleDeleteCard} />
       )}
       
       </CurrentTemperatureUnitContext.Provider>
