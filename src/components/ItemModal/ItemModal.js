@@ -11,14 +11,18 @@ const ItemModal = ({ selectedCard, onClose, onConfirm }) => {
           type="button"
           onClick={onClose}
         ></button>
-        <img className="modal__image" src={selectedCard.link}  alt={selectedCard.name} />
+        <img className="modal__image" src={selectedCard.imageUrl}  alt={selectedCard.name} />
         <div className="card__name-item">
-          <div>{selectedCard.name}</div>
-          <div> Weather type: {selectedCard.weather} </div>
-        </div>
-        <button className="card__modal-delete" type="button" onClick={() => onConfirm(selectedCard)}>
+          <div>{selectedCard.name} 
+          <button className="card__modal-delete" type="button" onClick={() => onConfirm(selectedCard)}>
           Delete item
         </button>
+        </div>
+          <div> Weather type: {selectedCard.weather} 
+    
+        
+        </div>
+        </div>
       </div>
     </div>
   );

@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
               type="url"
               name="imageUrl"
               minLength="1"
-              placeholder="Image URL"  value={imageUrl} onChange={handleUrlChange}
+              placeholder="Image URL" value={imageUrl} onChange={handleUrlChange}
             />
           </label>
           <div className="weather__type-text">Select the weather type:</div>
@@ -60,8 +60,8 @@ const handleSubmit = (e) => {
                 type="radio"
                 name="weatherType"
                 id="hot"
-                // value="hot"
-                className="modal__input-radio" value={weather} onChange={handleWeatherType}
+                 value="hot"
+                className="modal__input-radio"    onChange={handleWeatherType}
               /> 
                <span>Hot</span>
               </label>
@@ -72,8 +72,8 @@ const handleSubmit = (e) => {
                 type="radio"
                 name="weatherType"
                 id="warm"
-                // value="warm"
-                className="modal__input-radio" value={weather} onChange={handleWeatherType}
+                 value="warm"
+                className="modal__input-radio" onChange={handleWeatherType}
               /> 
               <span>Warm</span>
               </label>
@@ -84,8 +84,8 @@ const handleSubmit = (e) => {
                 type="radio"
                 name="weatherType"
                 id="cold"
-                // value="cold"
-                className="modal__input-radio" value={weather} onChange={handleWeatherType}
+                 value="cold"
+                className="modal__input-radio"  onChange={handleWeatherType}
               /> 
               <span>Cold</span>
               </label>

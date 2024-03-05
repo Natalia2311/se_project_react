@@ -62,20 +62,18 @@ function App() {
 
 
 
-  const handleAddItemSubmit = (values) => {
-    const item = {
-      name: values.name,
-      weather: values.weatherType,
-      imageUrl: values.link,
-    };
+  const handleAddItemSubmit = ({ name, weather, imageUrl }) => {
+    const item = { name, imageUrl, weather };
     addItem(item)
-    .then((res) => {
-      console.log(res);
+    .then((item) => {
+      console.log(item);
       setClothingItems([item, ...clothingItems]);
+      handleCloseModal();
     })
     .catch((err) => {
       console.log(err);
     });
+
   }
 
   const handleToggleSwitchChange =() => {
@@ -84,11 +82,11 @@ function App() {
   }
 
 
-  const onAddItem =(values) => {
-    console.log(values);
-    // console.log(e.target.value);
-    handleCloseModal();
-  }
+  // const onAddItem =({ name, weather, imageUrl }) => {
+  //   console.log(name, weather, imageUrl);
+  //   //console.log(e.target.value);
+  //   handleCloseModal();
+  // }
 
   useEffect(() => {
     getForecastWeather()
