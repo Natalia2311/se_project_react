@@ -18,7 +18,7 @@ export function getItemsList() {
     }).then(handleResponse);
 };
 
-export function addItem({ name, weather, imageUrl }) {  //values
+export function addItem({ name, weather, imageUrl }) {  
     return fetch(`${baseUrl}/items`, {
         method: "POST",
         headers: headers,

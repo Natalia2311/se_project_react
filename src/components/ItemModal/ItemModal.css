@@ -51,6 +51,12 @@
   color: #FF4D00;
   border: none;
   background-color: white;
+  padding-right: 32px;
 
+}
 
+.card__modal-name {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
 }
