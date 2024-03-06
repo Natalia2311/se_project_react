@@ -11,7 +11,7 @@ import {
   parseLoacation,
 } from "../../utils/weatherApi";
 import "../../vendor/fonts.css";
-import { CurrentTemperatureUnitContext } from "../contexts/CurrentTemperatureUnitContext";
+import { CurrentTemperatureUnitContext } from '../../contexts/CurrentTemperatureUnitContext';
 import { Switch, Route } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 
