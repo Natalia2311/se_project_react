@@ -5,28 +5,16 @@
     gap: 16px;
     align-items: center;
     justify-content: center;
-  
-   
+    width: 100%;  
     
 }
 
-.clothes__section {
-    width: 100%;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
 
-/* .clothes__section-items {
+.clothes__section-items {
     width: 100%;
-    margin: 0;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-} */
+    
+}
 
 .clothes__button {
   font-family: "CabinetGrotesk-Bold";

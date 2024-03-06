@@ -1,13 +1,13 @@
 import ClothesSection from "../ClothesSection/ClothesSection";
-import Sidebar from '../Sidebar/Sidebar';
+import SideBar from "../SideBar/SideBar";
 import "../Profile/Profile.css";
 
 
 const Profile = ({ cards, handleCreateModal, onSelectCard }) => {
     return (
         <div className="profile">
-            <div className="profile__sidebar">
-                <Sidebar />
+            <div className="profile__sideBar">
+                <SideBar />
             </div>
             <div className="profile__clothes">
                 <ClothesSection
