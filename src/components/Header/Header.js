@@ -33,7 +33,7 @@ const Header = ({ onCreateModal, location }) => {
             + Add сlothes
           </button>
         </div>
-        <Link to="profile" className="username">
+        <Link to="/profile" className="username">
           Terrence Tegegne
         </Link>
         <div>
