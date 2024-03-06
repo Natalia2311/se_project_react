@@ -3,7 +3,7 @@ import Header from "../Header/Header";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
 
-import { useState, useEffect, useForm } from "react";
+import { useState, useEffect } from "react";
 import ItemModal from "../ItemModal/ItemModal";
 import {
   getForecastWeather,
@@ -116,7 +116,7 @@ function App() {
           <Route path="/profile">
             <Profile
               onSelectCard={handleSelectedCard}
-              onCreateModal={handleCreateModal}
+              handleCreateModal={handleCreateModal}
               cards={clothingItems}
             />
           </Route>
