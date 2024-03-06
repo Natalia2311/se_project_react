@@ -19,4 +19,4 @@ const Profile = ({ cards, handleCreateModal, onSelectCard }) => {
     );
 };
 
-export default Profile;
+export default Profile;   
