@@ -1,12 +1,11 @@
 import ClothesSection from "../ClothesSection/ClothesSection";
-import SideBar from "../SideBar/SideBar.js";
+import SideBar from "../SideBar/SideBar";
 import "../Profile/Profile.css";
 
 const Profile = ({ cards, handleCreateModal, onSelectCard }) => {
   return (
     <div className="profile">
       <SideBar />
-
       <ClothesSection
         cards={cards}
         onSelectCard={onSelectCard}
