@@ -4,7 +4,6 @@
   align-items: center;
   margin: 32px 0 28px;
   max-width: 1440px;
- 
 }
 
 .header__logo {
@@ -48,6 +47,6 @@
   font-size: 20px;
   line-height: 24px;
   font-style: normal;
-  border-width: 0cap;
+  border-width: 0;
   background-color: white;
 }

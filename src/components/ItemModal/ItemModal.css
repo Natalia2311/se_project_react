@@ -48,11 +48,10 @@
   font-style: normal;
   font-weight: 700;
   line-height: 24px;
-  color: #FF4D00;
+  color: #ff4d00;
   border: none;
   background-color: white;
   padding-right: 32px;
-
 }
 
 .card__modal-name {

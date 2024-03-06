@@ -5,7 +5,8 @@ const ItemCard = ({ item, onSelectCard }) => {
     <div className="card__container">
       <div>
         <img
-          src={item.imageUrl || item.link}  alt={item.name}
+          src={item.imageUrl || item.link}
+          alt={item.name}
           className="card__image"
           onClick={() => onSelectCard(item)}
         />
@@ -16,4 +17,3 @@ const ItemCard = ({ item, onSelectCard }) => {
 };
 
 export default ItemCard;
-

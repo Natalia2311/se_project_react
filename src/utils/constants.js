@@ -37,7 +37,6 @@ export const defaultClotingItems = [
   },
 ];
 
-
 export const weatherOptions = [
   { url: require("../images/day/sunny.svg").default, day: true, type: "sunny" },
   {
