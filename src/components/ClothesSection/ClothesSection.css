@@ -2,17 +2,27 @@
 .clothes__items {
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    align-items: center;
-    justify-content: center;
+    gap: 20px;
     width: 100%;  
-    
+    margin: 0;
+    padding: 0;
+    justify-content: flex-end;
 }
+    
 
+
+.clothes__section {
+    display: flex;
+    flex-direction: column;
+}
 
 .clothes__section-items {
     width: 100%;
     display: flex;
+    padding: 0;
+    margin-top: 63px;
+    justify-content: center;
+    
     
 }
 
@@ -25,6 +35,8 @@
   color: gray;
   font-size: 20px;
   line-height: 24.8px;
+  padding-left: 20px;
+  margin-bottom: 16px;
 }
 
 .clothes__title {
@@ -32,5 +44,7 @@
     font-style: normal;
     font-weight: 700;
     font-size: 20px;
-    line-height: 24.8px;  
+    line-height: 24.8px; 
+    margin: 0 0 16px;
+    
 }

@@ -1,12 +1,5 @@
 .profile {
-    position: relative;
     display: flex;
+    max-width: 1440px;
+    
 }
-.profile__clothes {
-    width: 100%;
-    display: flex;
-    /* justify-content: center;
-    align-items: center;
-    flex-direction: column; */
-}
-  
