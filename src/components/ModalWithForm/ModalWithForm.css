@@ -1,0 +1,123 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.modal__content {
+  background-color: white;
+  max-width: 496px;
+  width: 100%;
+  border-radius: 12px;
+  padding: 28px 28px 28px 36px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 436px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  font-family: "CabinetGrotesk-Medium";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 16px;
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__button-close {
+  background-image: url("../../images/close.svg");
+  border: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  top: 20px;
+  right: 28px;
+}
+
+.modal__form-input {
+  width: 100%;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-top-style: hidden;
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.5);
+  padding-top: 8px;
+}
+
+.modal__label {
+  position: relative;
+  font-family: "CabinetGrotesk-Medium";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  font-size: 16px;
+  padding-bottom: 24px;
+}
+
+.weather__type-text {
+  color: #000;
+  font-family: "CabinetGrotesk-Medium";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal__input {
+  color: rgba(0, 0, 0, 0.5);
+  font-family: "CabinetGrotesk-Medium";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.modal__submit-button {
+  display: flex;
+  padding: 8px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  border: none;
+  font-family: "CabinetGrotesk-Regular";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  width: 124px;
+  height: 36px;
+}
+
+.modal__submit-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal__radio {
+  margin: 12px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  accent-color: #000;
+}
+
+.modal__input-radio:checked ~ span {
+  color: black;
+}

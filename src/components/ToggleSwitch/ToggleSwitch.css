@@ -1,0 +1,102 @@
+.switch {
+  display: flex;
+  position: relative;
+}
+
+.switch__box {
+  border-radius: 25px;
+  border: 2px solid #7e7e7e;
+  width: 56px;
+  height: 28px;
+  appearance: none;
+  margin: 0;
+  padding: 0;
+}
+
+.switch__box:hover {
+  border: 2px solid black;
+}
+
+.switch__slider {
+  border-radius: 20px;
+  width: 28px;
+  height: 28px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.switch__slider-F {
+  width: 28px;
+  height: 28px;
+  border-radius: 20px;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left: -2px;
+  top: 0px;
+}
+
+.switch__slider-C {
+  width: 28px;
+  height: 28px;
+  border-radius: 20px;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  left: 28px;
+  top: 0px;
+
+  /* transition: right 500ms ease, 
+        background-color 500ms ease, 
+        box-shadow 500ms ease;
+     */
+}
+
+.switch__temp-F {
+  position: absolute;
+  z-index: 100;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  top: -10px;
+  left: 38px;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  line-height: 17.36px;
+  text-align: center;
+}
+
+.switch__temp-C {
+  position: absolute;
+  z-index: 100;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.5);
+  top: -8px;
+  left: -56px;
+  font-family: "CabinetGrotesk-Bold";
+  font-weight: 700;
+  line-height: 17.36px;
+  text-align: center;
+}
+
+.switch__active {
+  font-size: 16px;
+  color: #7e7e7e;
+  z-index: 100;
+  top: -9px;
+  right: 2px;
+  font-size: 15px;
+  position: absolute;
+}
+
+.switch_none {
+  color: white;
+  left: 10px;
+  top: -8px;
+}

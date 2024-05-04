@@ -1,0 +1,22 @@
+.weather {
+  position: relative;
+}
+
+.weather_info {
+  position: absolute;
+  top: 0px;
+  left: 16px;
+  color: white;
+  font-size: 36px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-top: 20px;
+  font-family: "CabinetGrotesk-Bold";
+  font-style: normal;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.weather_image {
+  height: 80px;
+}

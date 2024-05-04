@@ -1,0 +1,61 @@
+.item__button-close {
+  background-image: url("../../images/close_white.svg");
+  border: none;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: transparent;
+  top: 20px;
+  right: 28px;
+  color: white;
+}
+
+.modal__content-item {
+  background-color: white;
+  max-width: 498px;
+  max-height: 610px;
+  width: 100%;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.card__name-item {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0 32px 32px;
+}
+
+.modal__image {
+  max-width: 498px;
+  width: 100%;
+  height: 498px;
+  border-radius: 16px 16px 0 0;
+}
+
+.card__modal-delete {
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ff4d00;
+  border: none;
+  background-color: white;
+  padding-right: 32px;
+}
+
+.card__modal-name {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}

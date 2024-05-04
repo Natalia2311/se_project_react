@@ -1,0 +1,25 @@
+.card__name {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.6);
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  position: absolute;
+  margin-top: 16px;
+  background-color: white;
+  border-radius: 4px;
+  padding: 2px 12px;
+  max-width: 95px;
+}
+
+.card__container {
+  display: flex;
+  justify-content: center;
+}
+
+.card__image {
+  width: 328px;
+  height: 328px;
+  border-radius: 19px;
+}

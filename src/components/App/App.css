@@ -1,0 +1,12 @@
+@import url(../../vendor/fonts.css);
+@import url(../../vendor/normalize.css);
+
+.page {
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-right: 40px;
+}
