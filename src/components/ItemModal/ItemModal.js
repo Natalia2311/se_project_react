@@ -37,3 +37,15 @@ const ItemModal = ({ selectedCard, onClose, onConfirm }) => {
 };
 
 export default ItemModal;
+
+
+
+// isOwner
+//       ? "item_modal__delete-button_visible"
+//       : "item_modal__delete-button_hidden"
+
+// Which uses this:
+// const isOwner = currentUser && selectedCard.owner === currentUser._id;
+
+// So it will show this button if currentUser has a value, and selectedCard.owner === currentUser._id.
+// This tells me that currentUser still has a value, even after logging out, but it shouldn't.

@@ -3,6 +3,8 @@ import avatar from "../../images/avatar.svg";
 import logo from "../../images/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 function getDate() {
   const currectDate = new Date().toLocaleDateString("default", {
@@ -12,7 +14,13 @@ function getDate() {
   return <span>{currectDate}</span>;
 }
 
-const Header = ({ onCreateModal, location }) => {
+const Header = ({ 
+  onCreateModal, 
+  location, 
+  isLoggedIn, 
+  handleOpenSighupModal,
+  handleOpenLoginModal }) => {
+  const currentUser = useContext(CurrentUserContext);
   console.log("Header");
 
   return (
@@ -28,18 +36,27 @@ const Header = ({ onCreateModal, location }) => {
       </div>
       <div className="header__avatar-logo">
         <ToggleSwitch />
-        <div>
+        {isLoggedIn ? (
+        
+        <>
           <button type="text" className="button" onClick={onCreateModal}>
             + Add сlothes
           </button>
-        </div>
+       
         <Link to="/profile" className="username">
-          Terrence Tegegne
+          {currentUser?.name}
         </Link>
-        <div>
-          <img src={avatar} alt="logo" />
+        
+          <img src={currentUser?.avatar} alt="logo" className="header__avatar-logo"/>
+       
+     </>
+        ) : (
+          <>
+          <button className="button" onClick={handleOpenSighupModal}>Sign Up</button>
+          <button className="button" onClick={handleOpenLoginModal}>Log In</button>
+          </>
+        )}
         </div>
-      </div>
     </header>
   );
 };

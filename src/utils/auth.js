@@ -3,7 +3,7 @@ import { handleResponse } from './api';
 const baseUrl = "http://localhost:3001";
 
 //Sigh up
-const createUser = ({ name, avatar, email, password }) => {
+ const createUser = ({ name, avatar, email, password }) => {
     return fetch(`${baseUrl}/signup`, {
         method: "POST",
         headers: {
@@ -14,7 +14,7 @@ const createUser = ({ name, avatar, email, password }) => {
     };
 
 //Sign in
-const login = ({ email, password }) => {
+ const login = ({ email, password }) => {
     return fetch(`${baseUrl}/signin`, {
         method: "POST",
         headers: {
@@ -25,34 +25,56 @@ const login = ({ email, password }) => {
     };
 
 // Check token
-const checkToken = (token) => {
+ const checkToken = (token) => {
     return fetch(`${baseUrl}/users/me`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${token}`,
           },
-        body: JSON.stringify({}),
-      }).then(handleResponse);
-    };
+      body: JSON.stringify({}),
+      }).then(handleResponse)
+      .catch((err) => {
+        console.log(err);
+        throw err;
+      });
+  
+    }
+
+    // const checkToken = (token) => {
+    //   return fetch(`${baseUrl}/users/me`, {
+    //     method: "GET",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       authorization: `Bearer ${token}`,
+    //     },
+    //   }).then((res) => res.json());
+    // };
+    
    
  // Edit profile   
 
- const updateUser = ({ name, avatar }) => {
-    return fetch(`${baseUrl}/signup`, {
+  const updateUser = ({ name, avatar, token }) => {
+    return fetch(`${baseUrl}/users/me`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
+            authorization: `Bearer ${token}`,
           },
         body: JSON.stringify({ name, avatar}),
-      }).then(handleResponse);
+      }).then(handleResponse)
+      .catch((err) => {
+                console.log(err);
+                throw err;
+      });
     };
 
     const auth = {
-        createUser,
-        login,
-        checkToken,
-        updateUser,
+      createUser,
+      checkToken,
+      login,
+      updateUser,
+
     }
 
-    export default auth;
+   export default auth;

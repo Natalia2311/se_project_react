@@ -32,3 +32,4 @@ export function deleteItems(_id) {
     headers: headers,
   }).then(handleResponse);
 }
+
