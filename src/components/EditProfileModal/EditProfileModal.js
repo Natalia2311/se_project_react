@@ -27,7 +27,7 @@ const handleAvatarChange = (e) => {
 const handleSubmit = (e) => {
     e.preventDefault();
     const token = localStorage.getItem('jwt');
-    onSubmit({ name, avatar, token });
+    onSubmit(name, avatar, token);
 };
 
 useEffect(() => {
@@ -70,10 +70,10 @@ return (
             onChange={handleAvatarChange}>
             </input>
             </label>
-            {/* <button className='modal__submit-button' 
-            type="submit" onSubmit={} >
+            <button className='modal__submit-button' 
+            type="submit" onSubmit={handleEditProfile} >
                 Save changes
-            </button> */}
+            </button>
 </div>
     </ModalWithForm>
 )
