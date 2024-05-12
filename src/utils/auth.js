@@ -4,6 +4,7 @@ const baseUrl = "http://localhost:3001";
 
 //Sigh up
  const createUser = ({ name, avatar, email, password }) => {
+
     return fetch(`${baseUrl}/signup`, {
         method: "POST",
         headers: {
@@ -61,7 +62,7 @@ const baseUrl = "http://localhost:3001";
             "Content-Type": "application/json",
             authorization: `Bearer ${token}`,
           },
-        body: JSON.stringify({ name, avatar}),
+        body: JSON.stringify({ name, avatar }),
       }).then(handleResponse)
       .catch((err) => {
                 console.log(err);

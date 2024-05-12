@@ -46,68 +46,72 @@ return (
     className='register'
     >
         
-        <div >
+     
         <button type="button" className="form__button-close" onClick={onClose}>
           {" "}
         </button>
-        <div className='modal__content-inputs'>
+   
+        <div onSubmit={onSubmit} className="modal__form">
             <label className='modal__label'>
             Email* 
-            </label>
-            <input className='modal__input'
+            
+            <input className='modal__form-input'
             name='email'
             type='email'
             placeholder='Email' required
             value={email}
             onChange={handleEmailChange}>
             </input>
-            </div>
-           
-            <div className='modal__content-inputs'>
+            </label>
+        
             <label className='modal__label'>
             Password* 
-            </label>
-            <input className='modal__input'
+            
+            <input className='modal__form-input'
             name='password'
             type='password'
             placeholder='Password' required
             value={password}
             onChange={handlePasswordChange}>
             </input>
-        </div>
-        <div className='modal__content-inputs'>
+            </label>
+        
+        
         <label className='modal__label'>
             Name* 
-            </label>
-            <input className='modal__input'
+           
+            <input className='modal__form-input'
             name='name'
             type='name'
             placeholder='Name' required
             value={name}
             onChange={handleNameChange}>
             </input>
-        </div>
-        <div className='modal__content-inputs'>
+            </label>
+      
         <label className='modal__label'>
             Avatar URL* 
-            </label>
-            <input className='modal__input'
+          
+            <input className='modal__form-input'
             name='avatar'
             type='avatar'
             placeholder='Avatar URL' required
             value={avatar}
             onChange={handleAvatarChange}>
             </input>
-        </div>
-        </div>
-        <div>
+            </label>
+            </div>
+            <div className='modal__button'>
             <button className='modal__submit-button' type="submit" onSubmit={handleSubmit} >
                 Sign Up
             </button>
             <button className='modal__submit-login' type="submit" onClick={handleOpenLoginModal}>
                 or Log In
             </button>
-        </div>
+            </div>
+            
+         
+      
 
 
     </ModalWithForm>

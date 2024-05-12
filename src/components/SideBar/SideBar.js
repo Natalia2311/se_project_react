@@ -2,10 +2,24 @@ import React from "react";
 import "./SideBar.css";
 import avatar from "../../images/avatar.svg";
 
-const SideBar = () => (
+const SideBar = (name, handleEditProfile, handleLogout) => (
   <div className="sidebar">
     <img src={avatar} alt="sidebar__avatar" className="sidebar__avatar" />
-    <p className="sidebar__name">Terrence Tegegne</p>
+    <p className="sidebar__name">{name}</p>
+    <div className="sidebar__button">
+      <button
+      onSubmit={handleEditProfile}
+      type="button"
+      className="sidebar__edit-button">
+        Change profile data 
+        </button>
+        <button
+       onClick={handleLogout}
+      type="button"
+      className="sidebar__logout-button">
+        Log Out
+        </button>
+    </div>
   </div>
 );
 

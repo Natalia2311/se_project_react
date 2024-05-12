@@ -33,40 +33,43 @@ return (
     handleOpenLoginModal={handleOpenLoginModal}
     className='log in'
     >
-     <div className='modal__content-inputs'>
+        
+     <div onSubmit={onSubmit} className="modal__form">
      <button type="button" className="form__button-close" onClick={onClose}>
           {" "}
         </button>
             <label className='modal__label'>
             Email 
-            </label>
-            <input className='modal__label-email'
+           
+            <input className='modal__form-input'
             name='email'
             type='email'
             placeholder='Email' required
             value={email}
             onChange={handleEmailChange}>
             </input>
-            </div>
-            <div>
+            </label>
+          
             <label className='modal__label'>
             Password 
-            </label>
-            <input className='modal__label-password'
+            
+            <input className='modal__form-input'
             name='password'
             type='password'
             placeholder='Password' required
             value={password}
             onChange={handlePasswordChange}>
             </input>
+            </label>
+       
+        <div className='modal__button'>
+            <button className='modal__submit-button' type="submit"  onClick={handleOpenSighupModal}>
+            Log In
+            </button>
+            <button className='modal__submit-signup' type="submit" onSubmit={handleLoginModal}>
+            or Sign Up
+            </button>
         </div>
-        <div>
-            <button className='modal__form-signup' type="submit"  onClick={handleOpenSighupModal}>
-                Sign Up
-            </button>
-            <button className='modal__form-login' type="submit" onSubmit={handleLoginModal}>
-                or Log In
-            </button>
         </div>
        
     </ModalWithForm>

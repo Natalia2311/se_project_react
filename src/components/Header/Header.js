@@ -1,5 +1,5 @@
 import "./Header.css";
-import avatar from "../../images/avatar.svg";
+//import avatar from "../../images/avatar.svg";
 import logo from "../../images/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
@@ -20,7 +20,7 @@ const Header = ({
   isLoggedIn, 
   handleOpenSighupModal,
   handleOpenLoginModal }) => {
-  const currentUser = useContext(CurrentUserContext);
+  const { currentUser } = useContext(CurrentUserContext);
   console.log("Header");
 
   return (
@@ -44,12 +44,16 @@ const Header = ({
           </button>
        
         <Link to="/profile" className="username">
-          {currentUser?.name}
+          {currentUser?.name} 
+          
         </Link>
-        
+
+        <div>
           <img src={currentUser?.avatar} alt="logo" className="header__avatar-logo"/>
-       
+       {/* <p className="header__avatar-logo-let">{currentUser?.name[0].toUpperCase()}</p> */}
+       </div>
      </>
+     
         ) : (
           <>
           <button className="button" onClick={handleOpenSighupModal}>Sign Up</button>
@@ -62,3 +66,7 @@ const Header = ({
 };
 
 export default Header;
+
+{/* <div className="header__avatar-logo-default >
+          {currentUser?.name && currentUser?.name[0].toUpperCase()}
+          </div> */}
