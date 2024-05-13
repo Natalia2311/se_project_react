@@ -53,7 +53,7 @@ function App() {
       localStorage.setItem('jwt', data.token);
       auth.checkToken(data.token)
       .then((data) => {
-        setCurrentUser(data.token, true);
+        setCurrentUser(data.user);
         setIsLoggedIn(true);
         handleCloseModal();
         //navigate('/profile');

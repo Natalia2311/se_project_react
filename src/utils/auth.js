@@ -33,7 +33,7 @@ const baseUrl = "http://localhost:3001";
             "Content-Type": "application/json",
             authorization: `Bearer ${token}`,
           },
-      body: JSON.stringify({}),
+   
       }).then(handleResponse)
       .catch((err) => {
         console.log(err);
