@@ -49,14 +49,17 @@ function App() {
     }
     auth
     .login({ email, password })
+
     .then((data) => {
+
       localStorage.setItem('jwt', data.token);
-      auth.checkToken(data.token)
+      auth.
+      checkToken(data.user)
       .then((data) => {
         setCurrentUser(data.user);
         setIsLoggedIn(true);
         handleCloseModal();
-        //navigate('/profile');
+   
       });
     })
     .catch((err) => {
@@ -132,8 +135,10 @@ useEffect(() => {
   const tokenCheck = () => {
     const jwt = localStorage.getItem("jwt");
     if (jwt) {
+     
       console.log(jwt);
       auth
+  
         .checkToken(jwt)
         .then((res) => {
           if (res) {
