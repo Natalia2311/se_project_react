@@ -43,7 +43,7 @@ return (
     buttonText={'Save changes'}
     onClose={handleCloseModal}
     onSubmit={handleSubmit}
-    onClick={handleEditProfile}
+    handleOpenEditModal={handleOpenEditModal}
     className='update'
     >
 <div onSubmit={onSubmit} className="modal__form">

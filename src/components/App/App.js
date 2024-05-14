@@ -172,10 +172,12 @@ function handleCheckToken(token) {
 }
 
 useEffect(() => {
+
   const token = localStorage.getItem('jwt');
   if (token) {
     localStorage.setItem('jwt', token);
     auth
+    
     .checkToken(token)
     .then((res) => {
       if (res && res.data) {
@@ -313,6 +315,7 @@ const handleOpenEditModal = () => {
               onSubmit={handleEditProfile}
               onClose={handleCloseModal}
               onClick={handleLogout}
+              //handleOpenEditModal={handleOpenEditModal}
 
             />
           </ProtectedRoute>
@@ -348,7 +351,7 @@ const handleOpenEditModal = () => {
         )}
         {activeModal === "update" && (
           <EditProfileModal
-          handleOpenLoginModal={handleOpenLoginModal}
+          handleOpenEditModal={handleOpenEditModal}
           onClose={handleCloseModal}
           onSubmit={handleEditProfile}
 

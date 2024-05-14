@@ -42,15 +42,6 @@ const baseUrl = "http://localhost:3001";
   
     }
 
-    // const checkToken = (token) => {
-    //   return fetch(`${baseUrl}/users/me`, {
-    //     method: "GET",
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //       authorization: `Bearer ${token}`,
-    //     },
-    //   }).then((res) => res.json());
-    // };
     
    
  // Edit profile   
