@@ -4,7 +4,7 @@ import logo from "../../images/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function getDate() {
   const currectDate = new Date().toLocaleDateString("default", {
@@ -14,12 +14,13 @@ function getDate() {
   return <span>{currectDate}</span>;
 }
 
-const Header = ({ 
-  onCreateModal, 
-  location, 
-  isLoggedIn, 
+const Header = ({
+  onCreateModal,
+  location,
+  isLoggedIn,
   handleOpenSighupModal,
-  handleOpenLoginModal }) => {
+  handleOpenLoginModal,
+}) => {
   const { currentUser } = useContext(CurrentUserContext);
   console.log("Header");
 
@@ -37,36 +38,43 @@ const Header = ({
       <div className="header__avatar-logo">
         <ToggleSwitch />
         {isLoggedIn ? (
-        
-        <>
-          <button type="text" className="button" onClick={onCreateModal}>
-            + Add сlothes
-          </button>
-       
-        <Link to="/profile" className="username">
-          {currentUser?.name} 
-          
-        </Link>
+          <>
+            <button type="text" className="button" onClick={onCreateModal}>
+              + Add сlothes
+            </button>
 
-        <div>
-          <img src={currentUser?.avatar} alt="avatar" className="header__avatar-logo"/>
-       <p className="header__avatar-logo-let">{currentUser?.name[0].toUpperCase()}</p>
-       </div>
-     </>
-     
+            <Link to="/profile" className="username">
+              {currentUser?.name}
+            </Link>
+
+            <div>
+              <img
+                src={currentUser?.avatar}
+                alt="avatar"
+                className="header__avatar-logo"
+              />
+              {/* <p className="header__avatar-logo-let">{currentUser?.name[0].toUpperCase()}</p> */}
+            </div>
+          </>
         ) : (
           <>
-          <button className="button" onClick={handleOpenSighupModal}>Sign Up</button>
-          <button className="button" onClick={handleOpenLoginModal}>Log In</button>
+            <button className="button" onClick={handleOpenSighupModal}>
+              Sign Up
+            </button>
+            <button className="button" onClick={handleOpenLoginModal}>
+              Log In
+            </button>
           </>
         )}
-        </div>
+      </div>
     </header>
   );
 };
 
 export default Header;
 
-{/* <div className="header__avatar-logo-default >
+{
+  /* <div className="header__avatar-logo-default >
           {currentUser?.name && currentUser?.name[0].toUpperCase()}
-          </div> */}
+          </div> */
+}
