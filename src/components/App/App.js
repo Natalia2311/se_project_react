@@ -43,6 +43,20 @@ function App() {
   //const navigate = useNavigate();
 
 
+  // function handleCheckToken(token) {
+  //   auth
+  //   .checkToken(token)
+  //   .then((res) => {
+  //     if (res && res.data) {
+  //       setIsLoggedIn(true);
+  //       setCurrentUser(res.data); 
+  //     }
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+  // }
+
   const handleLoginModal = (email, password) => {
     if (!email || !password) {
       return;
@@ -50,20 +64,21 @@ function App() {
     auth
     .login({ email, password })
 
-    .then((data) => {
+    .then((res) => {
+    
+      localStorage.setItem('jwt', res.token)
 
-      localStorage.setItem('jwt', data.token);
-      auth.
-      checkToken(data.user)
       .then((data) => {
         setCurrentUser(data.user);
-        setIsLoggedIn(true);
         handleCloseModal();
+        setIsLoggedIn(true);
+        
    
       });
+    
     })
     .catch((err) => {
-      console.error(err.message);
+      console.error(err);
     })
     .finally();
   };
@@ -159,19 +174,19 @@ useEffect(() => {
 }, []);
 
 
-// function handleCheckToken(token) {
-//   auth
-//   .checkToken(token)
-//   .then((res) => {
-//     if (res && res.data) {
-//       setIsLoggedIn(true);
-//       setCurrentUser(res.data); 
-//     }
-//   })
-//   .catch((error) => {
-//     console.log(error);
-//   });
-// }
+function handleCheckToken(token) {
+  auth
+  .checkToken(token)
+  .then((res) => {
+    if (res && res.data) {
+      setIsLoggedIn(true);
+      setCurrentUser(res.data); 
+    }
+  })
+  .catch((error) => {
+    console.log(error);
+  });
+}
 
 useEffect(() => {
 
