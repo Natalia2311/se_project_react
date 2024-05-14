@@ -86,12 +86,14 @@ const handleRegisterModal = (name, avatar, email, password) => {
   }
 
   const handleEditProfile = (name, avatar) => {
+    const token = localStorage.getItem('jwt');
     auth
-    .updateUser({ name, avatar })
+    .updateUser({ name, avatar }, token)
     .then((res) => {
-      
+     
+     
+      setCurrentUser(res);
       handleCloseModal();
-      setCurrentUser(res.data);
     }).catch((error) => {
       console.error(error)
     });
@@ -102,7 +104,7 @@ const handleRegisterModal = (name, avatar, email, password) => {
  const handleLogout =() => {
   localStorage.removeItem("jwt");
   setIsLoggedIn(false);
-  //setUser({ name: '', avatar:'', _id: ''});
+ 
   setCurrentUser(null);
 }
 
@@ -157,19 +159,19 @@ useEffect(() => {
 }, []);
 
 
-function handleCheckToken(token) {
-  auth
-  .checkToken(token)
-  .then((res) => {
-    if (res && res.data) {
-      setIsLoggedIn(true);
-      setCurrentUser(res.data); 
-    }
-  })
-  .catch((error) => {
-    console.log(error);
-  });
-}
+// function handleCheckToken(token) {
+//   auth
+//   .checkToken(token)
+//   .then((res) => {
+//     if (res && res.data) {
+//       setIsLoggedIn(true);
+//       setCurrentUser(res.data); 
+//     }
+//   })
+//   .catch((error) => {
+//     console.log(error);
+//   });
+// }
 
 useEffect(() => {
 
@@ -312,10 +314,11 @@ const handleOpenEditModal = () => {
               handleCreateModal={handleCreateModal}
               cards={clothingItems}
               isLoggedIn={isLoggedIn}
-              onSubmit={handleEditProfile}
+            handleEditProfile={handleEditProfile}
               onClose={handleCloseModal}
-              onClick={handleLogout}
-              //handleOpenEditModal={handleOpenEditModal}
+              handleLogout={handleLogout}
+              //  handleLikeClick={handleLikeClick}
+            
 
             />
           </ProtectedRoute>

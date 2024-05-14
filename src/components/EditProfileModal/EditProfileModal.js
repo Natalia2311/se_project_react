@@ -14,15 +14,26 @@ const EditProfileModal = ({
 
 }) => {
     const { currentUser } = useContext(CurrentUserContext);
-    const [name, setName] = useState('');
-    const handleNameChange = (e) => {
-    setName(e.target.value);
-};  
 
-const [avatar, setAvatar] = useState('');
+ const [name, setName] = useState(currentUser.name || '');
+ const handleNameChange = (e) => {
+        setName(e.target.value);
+    };  
+
+const [avatar, setAvatar] = useState(currentUser.avatar || '');
 const handleAvatarChange = (e) => {
     setAvatar(e.target.value);
 };  
+
+//     const [name, setName] = useState('');
+//     const handleNameChange = (e) => {
+//     setName(e.target.value);
+// };  
+
+// const [avatar, setAvatar] = useState('');
+// const handleAvatarChange = (e) => {
+//     setAvatar(e.target.value);
+// };  
 
 const handleSubmit = (e) => {
     e.preventDefault();
