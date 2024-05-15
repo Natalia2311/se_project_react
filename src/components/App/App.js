@@ -91,11 +91,12 @@ function App() {
   };
 
   const handleEditProfile = (name, avatar) => {
-    const token = localStorage.getItem("jwt");
+    const jwt = localStorage.getItem("jwt");
     auth
-      .updateUser({ name, avatar }, token)
+      .updateUser({ name, avatar }, jwt)
       .then((res) => {
        console.log(res);
+       setIsLoggedIn(true);
         setCurrentUser(name, avatar);
         handleCloseModal();
       })

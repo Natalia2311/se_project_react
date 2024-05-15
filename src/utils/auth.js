@@ -46,12 +46,12 @@ const baseUrl = "http://localhost:3001";
    
  // Edit profile   
 
-  const updateUser = ({ name, avatar, token }) => {
+  const updateUser = ({ name, avatar}, jwt ) => {
     return fetch(`${baseUrl}/users/me`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${token}`,
+            authorization: `Bearer ${jwt}`,
           },
         body: JSON.stringify({ name, avatar }),
       }).then(handleResponse)
