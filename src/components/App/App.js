@@ -95,9 +95,9 @@ function App() {
     auth
       .updateUser({ name, avatar }, jwt)
       .then((res) => {
-       console.log(res);
+      
        setIsLoggedIn(true);
-        setCurrentUser(name, avatar);
+        setCurrentUser(res.data);
         handleCloseModal();
       })
       .catch((error) => {

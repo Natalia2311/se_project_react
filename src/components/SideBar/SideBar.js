@@ -11,6 +11,7 @@ const SideBar = ({
    handleOpenEditModal }) => (
   
   <div className="sidebar">
+    <div></div>
     <img src={avatar} alt="sidebar__avatar" className="sidebar__avatar" />
     <p className="sidebar__name">{name}</p>
     <div className="sidebar__button">

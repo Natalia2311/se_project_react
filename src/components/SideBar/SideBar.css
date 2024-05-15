@@ -2,6 +2,7 @@
   display: flex;
   margin-top: 47px;
   align-items: flex-start;
+  flex-direction: column;
 }
 
 .sidebar__name {
@@ -19,4 +20,14 @@
 .sidebar__avatar {
   width: 56px;
   height: 56px;
+}
+
+.sidebar__button {
+  flex-direction: column;
+}
+
+.sidebar__avatar {
+  display: flex;
+  align-items: flex-start;
+
 }
