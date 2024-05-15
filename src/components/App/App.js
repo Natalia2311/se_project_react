@@ -61,7 +61,6 @@ function App() {
         if (res && res.token) {
           localStorage.setItem("jwt", res.token);
           auth.checkToken(res.token).then((data) => {
-            debugger;
             setCurrentUser(data.user);
             handleCloseModal();
             setIsLoggedIn(true);
@@ -96,7 +95,8 @@ function App() {
     auth
       .updateUser({ name, avatar }, token)
       .then((res) => {
-        setCurrentUser(res);
+       console.log(res);
+        setCurrentUser(name, avatar);
         handleCloseModal();
       })
       .catch((error) => {
@@ -313,6 +313,7 @@ function App() {
                 handleEditProfile={handleEditProfile}
                 onClose={handleCloseModal}
                 handleLogout={handleLogout}
+                handleOpenEditModal={handleOpenEditModal}
                 //  handleLikeClick={handleLikeClick}
               />
             </ProtectedRoute>

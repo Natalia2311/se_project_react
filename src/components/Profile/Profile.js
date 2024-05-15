@@ -4,7 +4,13 @@ import "../Profile/Profile.css";
 import { useContext } from "react";
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-const Profile = ({ cards, handleCreateModal, onSelectCard, handleEditProfile, handleLogout }) => {
+const Profile = ({ 
+  cards, 
+  handleCreateModal, 
+  onSelectCard, 
+  handleOpenEditModal,
+  handleEditProfile, 
+  handleLogout }) => {
   const { currentUser } = useContext(CurrentUserContext);
   return (
     <div className="profile">
@@ -12,7 +18,9 @@ const Profile = ({ cards, handleCreateModal, onSelectCard, handleEditProfile, ha
       name={currentUser.name}
       avatar={currentUser.avatar}
       handleEditProfile={handleEditProfile}
-      handleLogout={handleLogout} />
+      handleLogout={handleLogout}
+      handleOpenEditModal={handleOpenEditModal}
+       />
       <ClothesSection
         cards={cards}
         onSelectCard={onSelectCard}

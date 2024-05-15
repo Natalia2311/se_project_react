@@ -41,12 +41,12 @@ const handleSubmit = (e) => {
     onSubmit(name, avatar, token);
 };
 
-useEffect(() => {
-    if (handleEditProfile) {
-        setName(currentUser.name);
-        setAvatar(currentUser.avatar);
-    }
-}, [currentUser.avatar, currentUser.name, handleEditProfile]);
+// useEffect(() => {
+//     if (handleEditProfile) {
+//         setName(currentUser.name);
+//         setAvatar(currentUser.avatar);
+//     }
+// }, [currentUser.avatar, currentUser.name, handleEditProfile]);
 
 return (
     <ModalWithForm
@@ -58,6 +58,9 @@ return (
     className='update'
     >
 <div onSubmit={onSubmit} className="modal__form">
+<button type="button" className="form__button-close" onClick={onClose}>
+          {" "}
+        </button>   
 <label className='modal__label'>
             Name* 
            
