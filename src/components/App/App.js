@@ -6,6 +6,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import auth from "../../utils/auth";
+import DeleteModal from "../DeleteModal/DeleteModal";
 
 import { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom/cjs/react-router-dom";
@@ -112,6 +113,60 @@ function App() {
     setCurrentUser(null);
   };
 
+  
+  // const handleCardLike = ({ id, isLiked }) => {
+    // const updatedCard = cards.map((item) => {
+    //   if (item.id === id) {
+    //     return {...item, isLiked };
+    //   }
+    //   return item;
+    // })
+  //   const jwt= localStorage.getItem("jwt");
+  //   // Check if this card is not currently liked
+  //   !isLiked
+  //     ? // if so, send a request to add the user's id to the card's likes array
+  //       //api
+  //         // the first argument is the card's id
+  //         addLike(id, jwt)
+  //         .then((updatedCard) => {
+  //           setClothingItems((cards) =>
+  //             cards.map((item) => (item._id === id ? updatedCard : item))
+  //           );
+  //         })
+  //         .catch((err) => console.log(err))
+  //     : // if not, send a request to remove the user's id from the card's likes array
+  //      // api
+  //         // the first argument is the card's id
+  //         removeLike(id, jwt) 
+  //         .then((updatedCard) => {
+  //           setClothingItems((cards) =>
+  //             cards.map((item) => (item._id === id ? updatedCard : item))
+  //           );
+  //         })
+  //         .catch((err) => console.log(err));
+  // };
+
+  //  const handleCardLike = (id, isLiked) => {
+  //   const jwt = localStorage.getItem("jwt");
+  //   !isLiked 
+    
+  //   addLike(id, jwt)
+  //   .then((updatedCard) => {
+  //     setClothingItems((cards) => {
+  //       return cards.map((item) => (item._id === id ? updatedCard : item))
+  //     });
+  //   })
+  //   .catch((err)=> console.log(err))
+  
+  //   .removeLike(id, jwt)
+  //   .then ((updatedCard) => {
+  //     setClothingItems((cards) => {
+  //       return cards.map((item) => (item._id === id ? updatedCard : item))
+  //     });
+  //   })
+  //   .catch((err)=> console.log(err));
+  //  };
+
   // const  handleCheckToken = () => {
   //   const token = localStorage.getItem('jwt');
   //   if(token) {
@@ -208,6 +263,10 @@ function App() {
     setActiveModal("create");
   };
 
+  const handleOpenDeleteModal = () => {
+    setActiveModal("delete");
+  };
+
   const handleCloseModal = () => {
     setActiveModal("");
   };
@@ -218,7 +277,8 @@ function App() {
   };
 
   const handleDeleteCard = () => {
-    deleteItems(selectedCard._id)
+    const jwt = localStorage.getItem("jwt")
+    deleteItems(selectedCard._id, jwt)
       .then(() => {
         const newItemList = clothingItems.filter((item) => {
           return item._id !== selectedCard._id;
@@ -233,7 +293,8 @@ function App() {
 
   const handleAddItemSubmit = ({ name, weather, imageUrl }) => {
     const item = { name, imageUrl, weather };
-    addItem(item)
+    const jwt= localStorage.getItem("jwt")
+    addItem(item, jwt)
       .then((item) => {
         console.log(item);
         setClothingItems([item.data, ...clothingItems]);
@@ -270,19 +331,10 @@ function App() {
       });
   }, []);
 
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     const token = localStorage.getItem("jwt");
-  //     checkToken(token)
-  //       .then((userData) => {
-  //         setCurrentUser(userData);
-  //       })
-  //       .catch(console.error);
-  //   }
-  // }, [isLoggedIn]);
+  
 
   return (
-    <CurrentUserContext.Provider value={{ currentUser }}>
+    <CurrentUserContext.Provider value={{ currentUser }} isLoggedIn={isLoggedIn}>
       <div className="page">
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -320,6 +372,7 @@ function App() {
             </ProtectedRoute>
           </Switch>
           <Footer />
+         
           {activeModal === "create" && (
             <AddItemModal
               handleCloseModal={handleCloseModal}
@@ -353,6 +406,13 @@ function App() {
               handleOpenEditModal={handleOpenEditModal}
               onClose={handleCloseModal}
               onSubmit={handleEditProfile}
+            />
+          )}
+          {activeModal === "delete" && (
+            <DeleteModal
+            handleOpenDeleteModal={handleOpenDeleteModal}
+              onClose={handleCloseModal}
+              onConfirm={handleDeleteCard}
             />
           )}
         </CurrentTemperatureUnitContext.Provider>

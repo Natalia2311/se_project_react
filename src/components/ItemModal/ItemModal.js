@@ -1,7 +1,16 @@
 import "./ItemModal.css";
+import { useContext } from "react";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const ItemModal = ({ selectedCard, onClose, onConfirm }) => {
+const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn, }) => {
+
   console.log("item modal");
+  const { currentUser } = useContext(CurrentUserContext);
+
+  const isOwn = currentUser && selectedCard.owner === currentUser._id;
+  const itemDeleteButtonClassName = (
+    `item__delete-button ${isOwn ? 'item__delete-button_visible' : 'item__delete-button_hidden'}` );
+
 
   return (
     <div className={"modal"}>
@@ -38,14 +47,11 @@ const ItemModal = ({ selectedCard, onClose, onConfirm }) => {
 
 export default ItemModal;
 
+//that className={...} can only go inside a tag like <sometag className={...}>
 
-
-// isOwner
-//       ? "item_modal__delete-button_visible"
-//       : "item_modal__delete-button_hidden"
-
-// Which uses this:
-// const isOwner = currentUser && selectedCard.owner === currentUser._id;
-
-// So it will show this button if currentUser has a value, and selectedCard.owner === currentUser._id.
-// This tells me that currentUser still has a value, even after logging out, but it shouldn't.
+// className {
+//   isOpen
+//   ? `item-modal modal __type ${selectedCard}`
+//   : `modal __type ${selectedCard} item-modal__hidden`
+// }
+// onClick={onClick}

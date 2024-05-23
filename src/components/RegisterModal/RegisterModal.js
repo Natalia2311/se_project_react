@@ -105,7 +105,7 @@ return (
             <button className='modal__submit-button' type="submit" onSubmit={handleSubmit} >
                 Sign Up
             </button>
-            <button className='modal__submit-login' type="submit" onClick={handleOpenLoginModal}>
+            <button className='modal__submit-login' type="button" onClick={handleOpenLoginModal}>
                 or Log In
             </button>
             </div>

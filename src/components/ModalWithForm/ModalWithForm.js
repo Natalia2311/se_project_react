@@ -20,10 +20,11 @@ const ModalWithForm = ({
         <h3>{title}</h3>
         <form onSubmit={onSubmit} className="modal__form">
           {children}
-          {/* <button className="modal__submit-button" type="submit">
+         
+        </form>
+         {/* <button className="modal__submit-button" type="submit">
             {buttonText}
           </button> */}
-        </form>
       </div>
     </div>
   );

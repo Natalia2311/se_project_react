@@ -49,11 +49,11 @@ const Header = ({
 
             <div>
               <img
-                src={currentUser?.avatar}
+                src={currentUser?.avatar} 
                 alt="avatar"
-                className="header__avatar-logo"
+                className="header__avatar-logo" 
               />
-              {/* <p className="header__avatar-logo-let">{currentUser?.name[0].toUpperCase()}</p> */}
+              <p className="header__avatar-logo-let">{currentUser?.name && currentUser?.name[0].toUpperCase()}</p>
             </div>
           </>
         ) : (

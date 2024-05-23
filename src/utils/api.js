@@ -26,10 +26,11 @@ export function addItem({ name, weather, imageUrl }) {
   }).then(handleResponse);
 }
 
-export function deleteItems(_id) {
+export function deleteItems(_id, jwt) {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
     headers: headers,
+    authorization: `Bearer ${jwt}`,
   }).then(handleResponse);
 }
 
