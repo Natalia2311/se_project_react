@@ -26,12 +26,12 @@ const baseUrl = "http://localhost:3001";
     };
 
 // Check token
- const checkToken = (token) => {
+ const checkToken = (jwt) => {
     return fetch(`${baseUrl}/users/me`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
-            authorization: `Bearer ${token}`,
+            authorization: `Bearer ${jwt}`,
           },
    
       }).then(handleResponse)

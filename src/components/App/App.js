@@ -214,9 +214,9 @@ function App() {
     tokenCheck();
   }, []);
 
-  function handleCheckToken(token) {
+ const handleCheckToken = (jwt) =>{
     auth
-      .checkToken(token)
+      .checkToken(jwt)
       .then((res) => {
         if (res && res.data) {
           setIsLoggedIn(true);
@@ -293,11 +293,11 @@ function App() {
 
   const handleAddItemSubmit = ({ name, weather, imageUrl }) => {
     const item = { name, imageUrl, weather };
-    const jwt= localStorage.getItem("jwt")
+    const jwt= localStorage.getItem("jwt");
+    
     addItem(item, jwt)
       .then((item) => {
-        console.log(item);
-        setClothingItems([item.data, ...clothingItems]);
+        setClothingItems([item, ...clothingItems]);
         handleCloseModal();
       })
       .catch((err) => {
@@ -392,12 +392,14 @@ function App() {
               handleOpenSighupModal={handleOpenSighupModal}
               onClose={handleCloseModal}
               onSubmit={handleRegisterModal}
+              handleOpenLoginModal={handleOpenLoginModal}
             />
           )}
           {activeModal === "login" && (
             <LoginModal
               handleOpenLoginModal={handleOpenLoginModal}
               onClose={handleCloseModal}
+              handleOpenSignupModal={handleOpenSighupModal}
               onSubmit={handleLoginModal}
             />
           )}

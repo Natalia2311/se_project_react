@@ -18,10 +18,14 @@ export function getItemsList() {
   }).then(handleResponse);
 }
 
-export function addItem({ name, weather, imageUrl }) {
+export function addItem({ name, weather, imageUrl }, jwt) {
   return fetch(`${baseUrl}/items`, {
     method: "POST",
-    headers: headers,
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${jwt}`,
+    },
+   
     body: JSON.stringify({ name, imageUrl, weather }),
   }).then(handleResponse);
 }
@@ -29,8 +33,10 @@ export function addItem({ name, weather, imageUrl }) {
 export function deleteItems(_id, jwt) {
   return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
-    headers: headers,
-    authorization: `Bearer ${jwt}`,
+    headers: {
+      "Content-Type": "application/json",
+      authorization: `Bearer ${jwt}`,
+    },
   }).then(handleResponse);
 }
 

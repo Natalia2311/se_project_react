@@ -4,8 +4,9 @@ import React from 'react';
 import ItemCard from "../ItemCard/ItemCard";
 import "../Profile/Profile.css";
 import "../ClothesSection/ClothesSection.css";
+import { clothingItems } from "../../utils/constants";
 
-const ClothesSection = ({ cards, handleCreateModal, onSelectCard }) => {
+const ClothesSection = ({ cards, handleCreateModal, onSelectCard, clothingItems }) => {
 
   const currentUser = React.useContext(CurrentUserContext);
 

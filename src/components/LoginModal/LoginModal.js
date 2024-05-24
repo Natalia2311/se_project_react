@@ -6,7 +6,7 @@ const LoginModal = ({
     handleCloseModal,
      handleLoginModal,
     onSubmit,
-    handleOpenSighupModal,
+    handleOpenSignupModal,
     handleOpenLoginModal,
     onClose }) => {
 
@@ -25,10 +25,10 @@ const handleSubmit = (e) => {
     onSubmit(email, password);
 };
 
-//  const switchModal = (e) => {
-//     e.preventDefault(); 
-//     e.handleOpenSighupModal(); 
-//   }
+ const switchModal = (e) => {
+    e.preventDefault(); 
+    handleOpenSignupModal(); 
+  };
 
 return (
     <ModalWithForm
@@ -38,7 +38,7 @@ return (
     onSubmit={handleSubmit}
     handleOpenLoginModal={handleOpenLoginModal}
     className='log in'
-    onClick={handleOpenSighupModal}
+    onClick={handleOpenSignupModal}
     >
         
      <div onSubmit={onSubmit} className="modal__form">
@@ -70,12 +70,13 @@ return (
             </label>
        
         <div className='modal__button'>
-            <button className='modal__submit-button' type="submit"  >
+            {/* <button className='modal__submit-button' type="submit"  >
             Log In
-            </button>
-            <button className='modal__submit-signup' type="button"  onClick={handleOpenSighupModal}>
+            </button> */}
+            <button className='modal__submit-signup' type="button"  onClick={switchModal}>
             or Sign Up
             </button>
+             
         </div>
         </div>
        

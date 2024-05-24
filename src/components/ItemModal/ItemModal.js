@@ -2,14 +2,16 @@ import "./ItemModal.css";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn, }) => {
+const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn }) => {
 
   console.log("item modal");
   const { currentUser } = useContext(CurrentUserContext);
+  console.log({ currentUser });
 
-  const isOwn = currentUser && selectedCard.owner === currentUser._id;
+  const isOwn = currentUser && selectedCard.owner._id === currentUser._id;
   const itemDeleteButtonClassName = (
-    `item__delete-button ${isOwn ? 'item__delete-button_visible' : 'item__delete-button_hidden'}` );
+    `item__delete-button ${isOwn ?
+       'item__delete-button_visible' : 'item__delete-button_hidden'}` );
 
 
   return (
@@ -30,9 +32,10 @@ const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn, }) => {
             <div>{selectedCard.name}</div>
             <div>
               <button
-                className="card__modal-delete"
+                 //className="item__delete-button"
                 type="button"
                 onClick={() => onConfirm(selectedCard)}
+                className={itemDeleteButtonClassName}
               >
                 Delete item
               </button>
@@ -47,11 +50,3 @@ const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn, }) => {
 
 export default ItemModal;
 
-//that className={...} can only go inside a tag like <sometag className={...}>
-
-// className {
-//   isOpen
-//   ? `item-modal modal __type ${selectedCard}`
-//   : `modal __type ${selectedCard} item-modal__hidden`
-// }
-// onClick={onClick}
