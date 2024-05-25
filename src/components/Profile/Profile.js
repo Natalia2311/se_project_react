@@ -5,13 +5,16 @@ import { useContext } from "react";
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 const Profile = ({ 
-  cards, 
+  cards,
+  isLoggedIn, 
   handleCreateModal, 
   onSelectCard, 
   handleOpenEditModal,
   handleEditProfile, 
   handleLogout }) => {
   const { currentUser } = useContext(CurrentUserContext);
+
+  
   return (
     <div className="profile">
       <SideBar
@@ -25,6 +28,7 @@ const Profile = ({
         cards={cards}
         onSelectCard={onSelectCard}
         handleCreateModal={handleCreateModal}
+        isLoggedIn={isLoggedIn}
       />
     </div>
   );

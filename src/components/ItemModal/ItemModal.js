@@ -7,10 +7,12 @@ const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn }) => {
   console.log("item modal");
   const { currentUser } = useContext(CurrentUserContext);
   console.log({ currentUser });
-
-  const isOwn = currentUser && selectedCard.owner._id === currentUser._id;
+debugger;
+  const isOwn = selectedCard.owner._id === currentUser?._id;
+  
   const itemDeleteButtonClassName = (
-    `item__delete-button ${isOwn ?
+    `item__delete-button ${
+      isOwn ?
        'item__delete-button_visible' : 'item__delete-button_hidden'}` );
 
 
@@ -31,14 +33,15 @@ const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn }) => {
           <div className="card__modal-name">
             <div>{selectedCard.name}</div>
             <div>
+              {(isLoggedIn && isOwn) &&
               <button
-                 //className="item__delete-button"
                 type="button"
                 onClick={() => onConfirm(selectedCard)}
                 className={itemDeleteButtonClassName}
               >
                 Delete item
               </button>
+                 }
             </div>
           </div>
           <div> Weather type: {selectedCard.weather}</div>

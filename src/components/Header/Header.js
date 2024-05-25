@@ -73,8 +73,3 @@ const Header = ({
 
 export default Header;
 
-{
-  /* <div className="header__avatar-logo-default >
-          {currentUser?.name && currentUser?.name[0].toUpperCase()}
-          </div> */
-}

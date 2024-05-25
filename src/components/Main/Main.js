@@ -35,6 +35,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
       <section className="card_section" id="card-section">
         Today is {temp}°{currentTemperatureUnit} / You may want to wear:
         <div className="card_items">
+          
           {filteredCards.map((item) => (
             <ItemCard
               key={item._id}
@@ -55,13 +56,3 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
 export default Main;
 
 
-// And cards don't appear on the root route also because the code for filtering doesn't work:
-
-// // Filter clothingItems based on weather temperature
-// const filteredClothingItems = clothingItems.filter((item) => {
-//   // Assuming each item has a property 'minTemperature' and 'maxTemperature'
-//   const minTemp = item.minTemperature;
-//   const maxTemp = item.maxTemperature;
-
-//   return weatherTemp >= minTemp && weatherTemp <= maxTemp;
-// });
