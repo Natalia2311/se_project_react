@@ -158,7 +158,8 @@ function App() {
     .then((updatedCard) => {
      
       setClothingItems((cards) => {
-        return cards.map((item) => (item._id === id ? updatedCard.data : item))
+     
+        return cards.map((item) => (item._id === id ? updatedCard: item))
       });
       setIsLiked(true);
     })
@@ -167,7 +168,7 @@ function App() {
     removeLike(id, jwt)
     .then ((updatedCard) => {
       setClothingItems((cards) => {
-        return cards.map((item) => (item._id === id ? updatedCard.data : item))
+        return cards.map((item) => (item._id === id ? updatedCard : item))
       });
       setIsLiked(false);
     })
@@ -364,7 +365,7 @@ function App() {
                 onSelectCard={handleSelectedCard}
                 temp={temp}
                 clothingItems={clothingItems}
-                //handleCardLike= {handleCardLike}
+                handleCardLike= {handleCardLike}
               />
             </Route>
 
@@ -424,8 +425,10 @@ function App() {
           {activeModal === "delete" && (
             <DeleteModal
             handleOpenDeleteModal={handleOpenDeleteModal}
-              onClose={handleCloseModal}
-              onConfirm={handleDeleteCard}
+            handleCloseModal={handleCloseModal}
+            onSubmit={handleDeleteCard}
+            onDelete={selectedCard}
+            
             />
           )}
         </CurrentTemperatureUnitContext.Provider>

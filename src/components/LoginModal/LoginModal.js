@@ -73,7 +73,8 @@ return (
             {/* <button className='modal__submit-button' type="submit"  >
             Log In
             </button> */}
-            <button className='modal__submit-signup' type="button"  onClick={switchModal}>
+            <button className='modal__submit-signup' type="button" 
+             onClick={switchModal}>
             or Sign Up
             </button>
              

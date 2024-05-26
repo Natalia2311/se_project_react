@@ -5,17 +5,25 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
-  position: absolute;
+  
   margin-top: 16px;
   background-color: white;
   border-radius: 4px;
   padding: 2px 12px;
   max-width: 95px;
+  margin-right: 10px;
 }
 
 .card__container {
   display: flex;
   justify-content: center;
+  
+}
+
+.card {
+  display: flex;
+  
+  position: absolute;
 }
 
 .card__image {
@@ -33,7 +41,11 @@
   border: none;
   background-color: transparent;
   overflow: visible;
-
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 20px;
+ 
 }
 
 .card__like-button_active {

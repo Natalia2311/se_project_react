@@ -4,8 +4,10 @@ const DeleteModal = ({
     onDelete, 
     onCancel, 
     onConfirm, 
+    onClose,
+    onSubmit,
     handleOpenDeleteModal, 
-    onClose }) => {
+    handleCloseModal }) => {
 
     const handeDelete = (e) => {
         e.preventDefault();
@@ -13,9 +15,9 @@ const DeleteModal = ({
     }
 
 return (
-    <div className='modal-delete' >
+    <div className='modal-delete' handleOpenDeleteModal={handleOpenDeleteModal}>
         <div className='modal__content'>
-        <button type="button" className="form__button-close" onClick={onClose}>
+        <button type="button" className="form__button-close" onClick={handleCloseModal}>
           {" "}
         </button>   
             <p className='modal__text'>
@@ -24,14 +26,14 @@ return (
             </p>
             <div className='modal__buttons'>
             <button 
-                type="button"
+                type="submit"
                 className='modal__button'
-                onClick={handeDelete}>Yes,delete item
+                onSubmit={handeDelete}>Yes,delete item
                 </button>
                 <button
                 type="button"
                 className='modal__button'
-                onClick={onCancel}>Cancel
+                onClick={handleCloseModal}>Cancel
                 </button>
                
             </div>

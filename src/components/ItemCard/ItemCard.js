@@ -24,14 +24,19 @@ const ItemCard = ({ item, onSelectCard, isLoggedIn, handleCardLike  }) => {
           alt={item.name}
           className="card__image"
           onClick={() => onSelectCard(item)}
+          
         />
+        
+        
       </div>
+      <div className="card">
       <p className="card__name"> {item.name} </p>
       <button
         onClick={() => handleLike(item._id, isLiked)}
         type="button"
         className={isLiked ? "card__like-button card__like-button_active" 
         : "card__like-button"}></button>
+        </div>
     </div>
   );
 };
