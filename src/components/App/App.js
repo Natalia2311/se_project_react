@@ -6,6 +6,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import auth from "../../utils/auth";
+import { addLike, removeLike } from '../../utils/auth';
 import DeleteModal from "../DeleteModal/DeleteModal";
 
 import { useState, useEffect } from "react";
@@ -146,26 +147,31 @@ function App() {
   //         .catch((err) => console.log(err));
   // };
 
-  //  const handleCardLike = (id, isLiked) => {
-  //   const jwt = localStorage.getItem("jwt");
-  //   !isLiked 
+   const handleCardLike = (id, isLiked) => {
+    const jwt = localStorage.getItem("jwt");
+    if (!isLiked) { 
     
-  //   addLike(id, jwt)
-  //   .then((updatedCard) => {
-  //     setClothingItems((cards) => {
-  //       return cards.map((item) => (item._id === id ? updatedCard : item))
-  //     });
-  //   })
-  //   .catch((err)=> console.log(err))
+    addLike(id, jwt)
   
-  //   .removeLike(id, jwt)
-  //   .then ((updatedCard) => {
-  //     setClothingItems((cards) => {
-  //       return cards.map((item) => (item._id === id ? updatedCard : item))
-  //     });
-  //   })
-  //   .catch((err)=> console.log(err));
-  //  };
+    .then((updatedCard) => {
+     
+      setClothingItems((cards) => {
+        return cards.map((item) => (item._id === id ? updatedCard.data : item))
+      });
+    })
+    .catch((err)=> console.log(err))
+  } else {
+    removeLike(id, jwt)
+    .then ((updatedCard) => {
+      setClothingItems((cards) => {
+        return cards.map((item) => (item._id === id ? updatedCard.data : item))
+      });
+    })
+    .catch((err)=> console.log(err));
+  };
+   };
+
+   
 
   // const  handleCheckToken = () => {
   //   const token = localStorage.getItem('jwt');
@@ -354,6 +360,7 @@ function App() {
                 onSelectCard={handleSelectedCard}
                 temp={temp}
                 clothingItems={clothingItems}
+                handleCardLike= {handleCardLike}
               />
             </Route>
 

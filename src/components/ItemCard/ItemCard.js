@@ -4,15 +4,15 @@ import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 
-const ItemCard = ({ item, onSelectCard, isLoggedIn, handleCardLike }) => {
+const ItemCard = ({ item, onSelectCard, isLoggedIn, handleCardLike, id }) => {
   const { currentUser } = useContext(CurrentUserContext);
-  // const handleLike = (item) => {
-   
-  //   // handleCardLike(item._id, isLiked);
-    
-  // };
+  const handleLike = (e) => {
 
-  //const isLiked = item.likes.some((id) => id === currentUser._id);
+   handleCardLike(id, isLiked);
+    
+  };
+
+  const isLiked = item.likes.some((id) => id === currentUser?._id);
 
   return (
     <div className="card__container">
@@ -25,15 +25,11 @@ const ItemCard = ({ item, onSelectCard, isLoggedIn, handleCardLike }) => {
         />
       </div>
       <p className="card__name"> {item.name} </p>
-      {/* <button 
-      //onClick={() => handleLike(item._id, isLiked)}
-      type="button"
-      className={
-      //   isLiked
-      //   ? "card__like-button card__like-button_active"
-      //   : "card__like-button"
-      // }>   
-      </button> */}
+      <button
+        onClick={() => handleLike(id, isLiked)}
+        type="button"
+        className={isLiked ? "card__like-button card__like-button_active" 
+        : "card__like-button"}></button>
     </div>
   );
 };

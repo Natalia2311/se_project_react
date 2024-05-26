@@ -63,7 +63,7 @@ const baseUrl = "http://localhost:3001";
 
     // Like
 
-    const addLike = (id, jwt) => {
+   export  const addLike = (id, jwt) => {
       return fetch(`${baseUrl}/items/${id}/likes`, {
           method: "PUT",
           headers: {
@@ -79,7 +79,7 @@ const baseUrl = "http://localhost:3001";
       };
 
 
-      const removeLike = (id, jwt) => {
+     export  const removeLike = (id, jwt) => {
         return fetch(`${baseUrl}/items/${id}/likes`, {
             method: "DELETE",
             headers: {
@@ -101,9 +101,7 @@ const baseUrl = "http://localhost:3001";
       checkToken,
       login,
       updateUser,
-      addLike,
-      removeLike,
-
+      
     }
 
    export default auth;

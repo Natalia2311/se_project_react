@@ -3,18 +3,14 @@ import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn }) => {
-
   console.log("item modal");
   const { currentUser } = useContext(CurrentUserContext);
   console.log({ currentUser });
-debugger;
-  const isOwn = selectedCard.owner._id === currentUser?._id;
+  const isOwn = selectedCard.owner === currentUser?._id;
   
-  const itemDeleteButtonClassName = (
-    `item__delete-button ${
-      isOwn ?
-       'item__delete-button_visible' : 'item__delete-button_hidden'}` );
-
+  const itemDeleteButtonClassName = `item__delete-button ${
+    isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
+  }`;
 
   return (
     <div className={"modal"}>
@@ -33,15 +29,15 @@ debugger;
           <div className="card__modal-name">
             <div>{selectedCard.name}</div>
             <div>
-              {(isLoggedIn && isOwn) &&
-              <button
-                type="button"
-                onClick={() => onConfirm(selectedCard)}
-                className={itemDeleteButtonClassName}
-              >
-                Delete item
-              </button>
-                 }
+              {isOwn && (
+                <button
+                  type="button"
+                  onClick={() => onConfirm(selectedCard)}
+                  className={itemDeleteButtonClassName}
+                >
+                  Delete item
+                </button>
+              )}
             </div>
           </div>
           <div> Weather type: {selectedCard.weather}</div>
@@ -52,4 +48,3 @@ debugger;
 };
 
 export default ItemModal;
-

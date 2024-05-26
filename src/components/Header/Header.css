@@ -18,10 +18,25 @@
   align-items: center;
   width: 40px;
   height: 40px;  
-  /* border-radius: 50%;
-  object-fit: cover; */ 
+  border-radius: 50px;
+  object-fit: cover; 
    
 
+}
+
+.header__avatar-logo-letter {
+position: absolute;
+font-family: "CabinetGrotesk-Bold";
+font-weight: 700;
+font-size: 20px;
+line-height: 24.8px;
+ 
+
+
+}
+
+.header__avatar {
+  position: relative;
 }
 
 .date {

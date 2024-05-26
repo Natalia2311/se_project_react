@@ -23,6 +23,7 @@
 }
 
 .sidebar__button {
+  display: flex;
   flex-direction: column;
 }
 

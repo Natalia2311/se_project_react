@@ -6,7 +6,7 @@ import "./Main.css";
 import { CurrentTemperatureUnitContext } from '../../contexts/CurrentTemperatureUnitContext';
 import { weather } from "../../utils/weatherApi";
 
-function Main({ weatherTemp, onSelectCard, clothingItems }) {
+function Main({ weatherTemp, onSelectCard, clothingItems, handleCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
   console.log(currentTemperatureUnit);
   const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 86;
@@ -45,6 +45,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems }) {
               link={item.link}
               name={item.name}
               weather={item.weather}
+              handleCardLike= {handleCardLike}
             />
           ))}
         </div>

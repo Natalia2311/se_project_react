@@ -23,3 +23,22 @@
   height: 328px;
   border-radius: 19px;
 }
+
+.card__like-button {
+  
+  position: relative;
+  background-image: url('../../images/like.svg');
+  width: 18px;
+  height: 15px;
+  border: none;
+  background-color: transparent;
+  overflow: visible;
+
+}
+
+.card__like-button_active {
+  position: relative;
+  background-image: url('../../images/likeactive.svg');
+  
+  background-color: transparent;
+}
