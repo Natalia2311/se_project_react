@@ -6,6 +6,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
 const Profile = ({ 
   cards,
+  handleCardLike,
   isLoggedIn, 
   handleCreateModal, 
   onSelectCard, 
@@ -29,6 +30,7 @@ const Profile = ({
         onSelectCard={onSelectCard}
         handleCreateModal={handleCreateModal}
         isLoggedIn={isLoggedIn}
+        handleCardLike={handleCardLike}
       />
     </div>
   );

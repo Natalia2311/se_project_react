@@ -6,7 +6,7 @@ import "../Profile/Profile.css";
 import "../ClothesSection/ClothesSection.css";
 
 
-const ClothesSection = ({ cards, handleCreateModal, onSelectCard, isLoggedIn, selectedCard, onCardLike }) => {
+const ClothesSection = ({ cards, handleCreateModal, onSelectCard, isLoggedIn, handleCardLike }) => {
 
   const currentUser = React.useContext(CurrentUserContext);
 
@@ -35,7 +35,8 @@ const ClothesSection = ({ cards, handleCreateModal, onSelectCard, isLoggedIn, se
             key={card._id} 
             item={card} 
             onSelectCard={onSelectCard}
-            isLoggedIn={isLoggedIn} />
+            isLoggedIn={isLoggedIn}
+            handleCardLike= {handleCardLike} />
           );
         })}
       </ul>

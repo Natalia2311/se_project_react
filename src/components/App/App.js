@@ -38,6 +38,7 @@ function App() {
   const [clothingItems, setClothingItems] = useState(defaultClotingItems);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
+  const [isLiked, setIsLiked] = useState(false);
 
   //const navigate = useNavigate();
 
@@ -147,17 +148,19 @@ function App() {
   //         .catch((err) => console.log(err));
   // };
 
-   const handleCardLike = (id, isLiked) => {
+   const handleCardLike = ({ id, isLiked, currentUser }) => {
+    console.log(id);
     const jwt = localStorage.getItem("jwt");
     if (!isLiked) { 
     
-    addLike(id, jwt)
+    addLike(id, jwt, currentUser)
   
     .then((updatedCard) => {
      
       setClothingItems((cards) => {
         return cards.map((item) => (item._id === id ? updatedCard.data : item))
       });
+      setIsLiked(true);
     })
     .catch((err)=> console.log(err))
   } else {
@@ -166,6 +169,7 @@ function App() {
       setClothingItems((cards) => {
         return cards.map((item) => (item._id === id ? updatedCard.data : item))
       });
+      setIsLiked(false);
     })
     .catch((err)=> console.log(err));
   };
@@ -360,7 +364,7 @@ function App() {
                 onSelectCard={handleSelectedCard}
                 temp={temp}
                 clothingItems={clothingItems}
-                handleCardLike= {handleCardLike}
+                //handleCardLike= {handleCardLike}
               />
             </Route>
 
@@ -374,7 +378,7 @@ function App() {
                 onClose={handleCloseModal}
                 handleLogout={handleLogout}
                 handleOpenEditModal={handleOpenEditModal}
-                //  handleLikeClick={handleLikeClick}
+                handleCardLike={handleCardLike}
               />
             </ProtectedRoute>
           </Switch>
