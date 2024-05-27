@@ -155,20 +155,20 @@ function App() {
     
     addLike(id, jwt, currentUser)
   
-    .then((updatedCard) => {
+    .then((item) => {
      
       setClothingItems((cards) => {
      
-        return cards.map((item) => (item._id === id ? updatedCard: item))
+        return cards.map((item) => (item._id === id ? item : item))
       });
       setIsLiked(true);
     })
     .catch((err)=> console.log(err))
   } else {
     removeLike(id, jwt)
-    .then ((updatedCard) => {
+    .then ((item) => {
       setClothingItems((cards) => {
-        return cards.map((item) => (item._id === id ? updatedCard : item))
+        return cards.map((item) => (item._id === id ? item : item))
       });
       setIsLiked(false);
     })
@@ -276,6 +276,7 @@ function App() {
 
   const handleOpenDeleteModal = () => {
     setActiveModal("delete");
+    setSelectedCard(selectedCard);
   };
 
   const handleCloseModal = () => {
@@ -366,6 +367,7 @@ function App() {
                 temp={temp}
                 clothingItems={clothingItems}
                 handleCardLike= {handleCardLike}
+                handleDeleteCard={handleDeleteCard}
               />
             </Route>
 
@@ -380,6 +382,7 @@ function App() {
                 handleLogout={handleLogout}
                 handleOpenEditModal={handleOpenEditModal}
                 handleCardLike={handleCardLike}
+                handleDeleteCard={handleDeleteCard}
               />
             </ProtectedRoute>
           </Switch>
@@ -396,7 +399,7 @@ function App() {
             <ItemModal
               selectedCard={selectedCard}
               onClose={handleCloseModal}
-              onConfirm={handleDeleteCard}
+              onConfirm={handleOpenDeleteModal}
             />
           )}
           {activeModal === "signup" && (

@@ -1,21 +1,19 @@
 import './DeleteModal.css';
 
 const DeleteModal = ({ 
-    onDelete, 
-    onCancel, 
-    onConfirm, 
-    onClose,
+    onDelete,  
     onSubmit,
-    handleOpenDeleteModal, 
-    handleCloseModal }) => {
+    handleCloseModal,
+    selectedCard,
+    handleDeleteCard }) => {
 
-    const handeDelete = (e) => {
+    const handleDelete = (e) => {
         e.preventDefault();
-        onConfirm();
+        onSubmit(selectedCard);
     }
 
 return (
-    <div className='modal-delete' handleOpenDeleteModal={handleOpenDeleteModal}>
+    <div className='modal-delete'  >
         <div className='modal__content'>
         <button type="button" className="form__button-close" onClick={handleCloseModal}>
           {" "}
@@ -28,7 +26,7 @@ return (
             <button 
                 type="submit"
                 className='modal__button'
-                onSubmit={handeDelete}>Yes,delete item
+                onSubmit={handleDeleteCard}>Yes,delete item
                 </button>
                 <button
                 type="button"

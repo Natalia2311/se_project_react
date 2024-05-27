@@ -2,7 +2,7 @@ import "./ItemModal.css";
 import { useContext } from "react";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
-const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn }) => {
+const ItemModal = ({ selectedCard, onClose, onConfirm, handleOpenDeleteModal }) => {
   console.log("item modal");
   const { currentUser } = useContext(CurrentUserContext);
   console.log({ currentUser });
@@ -32,7 +32,8 @@ const ItemModal = ({ selectedCard, onClose, onConfirm, isLoggedIn }) => {
               {isOwn && (
                 <button
                   type="button"
-                  onClick={() => onConfirm(selectedCard)}
+                  onClick={() => onConfirm(handleOpenDeleteModal)}
+                 
                   className={itemDeleteButtonClassName}
                 >
                   Delete item
