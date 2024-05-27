@@ -8,13 +8,14 @@
     background:white;
     color: black;
     border: none;
-    font-family: "CabinetGrotesk-Regular";
+    font-family: "CabinetGrotesk-Medium";
     font-size: 16px;
     font-style: normal;
     font-weight: 700;
     line-height: 20px;
     width: 124px;
     height: 36px;
+    color: rgba(0, 0, 0, 0.5);
     
   }
 

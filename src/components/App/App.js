@@ -155,20 +155,20 @@ function App() {
     
     addLike(id, jwt, currentUser)
   
-    .then((item) => {
+    .then((card) => {
      
       setClothingItems((cards) => {
      
-        return cards.map((item) => (item._id === id ? item : item))
+        return cards.map((item) => (item._id === id ? card.data : item))
       });
       setIsLiked(true);
     })
     .catch((err)=> console.log(err))
   } else {
     removeLike(id, jwt)
-    .then ((item) => {
+    .then ((card) => {
       setClothingItems((cards) => {
-        return cards.map((item) => (item._id === id ? item : item))
+        return cards.map((item) => (item._id === id ? card.data : item))
       });
       setIsLiked(false);
     })

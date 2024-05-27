@@ -70,9 +70,9 @@ return (
             </label>
        
         <div className='modal__button'>
-            {/* <button className='modal__submit-button' type="submit"  >
+            <button className='modal__submit-button' type="submit"  >
             Log In
-            </button> */}
+            </button>
             <button className='modal__submit-signup' type="button" 
              onClick={switchModal}>
             or Sign Up
@@ -87,3 +87,4 @@ return (
 
 export default LoginModal;
 
+//useFormWithValidation

@@ -14,7 +14,7 @@
   background-color: white;
   max-width: 496px;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 20px;
   padding: 28px 28px 28px 36px;
   box-sizing: border-box;
   margin: 0 auto;
@@ -33,6 +33,10 @@
 .modal__form {
   display: flex;
   flex-direction: column;
+}
+
+.form-title {
+  margin: 0;
 }
 
 .form__button-close {
@@ -102,8 +106,8 @@
   font-style: normal;
   font-weight: 700;
   line-height: 20px;
-  width: 124px;
-  height: 36px;
+  max-width: 124px;
+  max-height: 36px;
 }
 
 .modal__submit-button:hover {

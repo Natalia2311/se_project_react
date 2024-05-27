@@ -1,5 +1,4 @@
 import "./Header.css";
-//import avatar from "../../images/avatar.svg";
 import logo from "../../images/logo.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
@@ -35,7 +34,7 @@ const Header = ({
         <div className="date">{getDate()},</div>
         <div className="location">{location}</div>
       </div>
-      <div className="header__avatar-logo">
+      <div className="header__avatar">
         <ToggleSwitch />
         {isLoggedIn ? (
           <>
@@ -47,11 +46,11 @@ const Header = ({
               {currentUser?.name}
             </Link>
 
-            <div className="header__avatar">
+            <div className="header__avatar-logo">
               <img
                 src={currentUser?.avatar}
                 alt="avatar"
-                className="header__avatar-logo"
+                 className="header__avatar-user"
               />
               <p className="header__avatar-logo-letter">
                 {currentUser?.name && currentUser?.name[0].toUpperCase()}

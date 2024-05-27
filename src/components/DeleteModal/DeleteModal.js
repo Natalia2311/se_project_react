@@ -9,12 +9,14 @@ const DeleteModal = ({
 
     const handleDelete = (e) => {
         e.preventDefault();
-        onSubmit(selectedCard);
+    
+        onSubmit(selectedCard._id);
+       
     }
 
 return (
-    <div className='modal-delete'  >
-        <div className='modal__content'>
+    <div className='modal'>
+        <div className='modal__content-delete'>
         <button type="button" className="form__button-close" onClick={handleCloseModal}>
           {" "}
         </button>   
@@ -25,12 +27,12 @@ return (
             <div className='modal__buttons'>
             <button 
                 type="submit"
-                className='modal__button'
-                onSubmit={handleDeleteCard}>Yes,delete item
+                className='modal__button-delete'
+                onSubmit={handleDelete}>Yes, delete item
                 </button>
                 <button
                 type="button"
-                className='modal__button'
+                className='modal__button-cancel'
                 onClick={handleCloseModal}>Cancel
                 </button>
                

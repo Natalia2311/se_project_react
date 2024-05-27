@@ -107,9 +107,9 @@ return (
             </label>
             </form>
             <div className='modal__button'>
-            {/* <button className='modal__submit-button' type="submit" >
+            <button className='modal__submit-button' type="submit" >
                 Sign Up
-            </button> */}
+            </button>
             <button className='modal__submit-login' type="button" onClick={switchModal}>
                 or Log In
             </button>
