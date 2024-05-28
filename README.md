@@ -1,7 +1,7 @@
 https://Natalia2311.github.io/se_project_react
 
 
-The link to backend repo
+The link to backend repo:
 
 https://github.com/Natalia2311/se_project_express.git
 
