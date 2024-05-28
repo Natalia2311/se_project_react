@@ -7,8 +7,6 @@
 
 .sidebar__user {
   display: flex;
-  
-  
 }
 
 .sidebar__name {
@@ -27,8 +25,8 @@
   width: 56px;
   height: 56px;
   border-radius: 50px;
-  object-fit: cover; 
-  background-color:rgba(0, 0, 0, 0.5); 
+  object-fit: cover;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .sidebar__button {
@@ -37,13 +35,10 @@
   margin-top: 24px;
   gap: 8px;
 }
-  
-
 
 .sidebar__avatar {
   display: flex;
   align-items: flex-start;
-
 }
 
 .sidebar__edit-button {

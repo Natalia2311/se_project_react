@@ -96,13 +96,11 @@ const AddItemModal = ({ handleCloseModal, onAddItem, isOpen }) => {
             />
             <span>Cold</span>
           </label>
-          
         </div>
-       
       </div>
       <button className="modal__submit-button" type="submit">
-          Add garment
-          </button>  
+        Add garment
+      </button>
     </ModalWithForm>
   );
 };

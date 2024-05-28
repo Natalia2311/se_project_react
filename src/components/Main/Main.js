@@ -1,10 +1,9 @@
-
 import WeatherCard from "../WeatherCard/WeatherCard";
 import ItemCard from "../ItemCard/ItemCard";
 import { useMemo, useContext } from "react";
 import "./Main.css";
-import { CurrentTemperatureUnitContext } from '../../contexts/CurrentTemperatureUnitContext';
-import { weather } from "../../utils/weatherApi";
+import { CurrentTemperatureUnitContext } from "../../contexts/CurrentTemperatureUnitContext";
+
 
 function Main({ weatherTemp, onSelectCard, clothingItems, handleCardLike }) {
   const { currentTemperatureUnit } = useContext(CurrentTemperatureUnitContext);
@@ -35,7 +34,6 @@ function Main({ weatherTemp, onSelectCard, clothingItems, handleCardLike }) {
       <section className="card_section" id="card-section">
         Today is {temp}°{currentTemperatureUnit} / You may want to wear:
         <div className="card_items">
-          
           {filteredCards.map((item) => (
             <ItemCard
               key={item._id}
@@ -45,7 +43,7 @@ function Main({ weatherTemp, onSelectCard, clothingItems, handleCardLike }) {
               link={item.link}
               name={item.name}
               weather={item.weather}
-              handleCardLike= {handleCardLike}
+              handleCardLike={handleCardLike}
             />
           ))}
         </div>
@@ -55,5 +53,3 @@ function Main({ weatherTemp, onSelectCard, clothingItems, handleCardLike }) {
 }
 
 export default Main;
-
-

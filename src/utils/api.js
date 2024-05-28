@@ -25,7 +25,7 @@ export function addItem({ name, weather, imageUrl }, jwt) {
       "Content-Type": "application/json",
       authorization: `Bearer ${jwt}`,
     },
-   
+
     body: JSON.stringify({ name, imageUrl, weather }),
   }).then(handleResponse);
 }
@@ -39,4 +39,3 @@ export function deleteItems(_id, jwt) {
     },
   }).then(handleResponse);
 }
-

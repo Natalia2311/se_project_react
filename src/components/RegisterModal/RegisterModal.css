@@ -1,25 +1,24 @@
 .modal__submit-login {
-    display: flex;
-    padding: 8px 16px;
-    /*justify-content: center;*/
-    align-items: center;
-    gap: 8px;
-    border-radius: 4px;
-    background:white;
-    color: black;
-    border: none;
-    font-family: "CabinetGrotesk-Medium";
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 20px;
-    width: 124px;
-    height: 36px;
-    color: rgba(0, 0, 0, 0.5);
-    
-  }
+  display: flex;
+  padding: 8px 16px;
+  /*justify-content: center;*/
+  align-items: center;
+  gap: 8px;
+  border-radius: 4px;
+  background: white;
+  color: black;
+  border: none;
+  font-family: "CabinetGrotesk-Medium";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  width: 124px;
+  height: 36px;
+  color: rgba(0, 0, 0, 0.5);
+}
 
 .modal__button {
-    display: flex;
+  display: flex;
   flex-direction: row;
 }

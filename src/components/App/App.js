@@ -6,7 +6,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import LoginModal from "../LoginModal/LoginModal";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 import auth from "../../utils/auth";
-import { addLike, removeLike } from '../../utils/auth';
+import { addLike, removeLike } from "../../utils/auth";
 import DeleteModal from "../DeleteModal/DeleteModal";
 
 import { useState, useEffect } from "react";
@@ -39,22 +39,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
   const [isLiked, setIsLiked] = useState(false);
-
-  //const navigate = useNavigate();
-
-  // function handleCheckToken(token) {
-  //   auth
-  //   .checkToken(token)
-  //   .then((res) => {
-  //     if (res && res.data) {
-  //       setIsLoggedIn(true);
-  //       setCurrentUser(res.data);
-  //     }
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-  
 
   const handleLoginModal = (email, password) => {
     auth
@@ -98,8 +82,7 @@ function App() {
     auth
       .updateUser({ name, avatar }, jwt)
       .then((res) => {
-      
-       setIsLoggedIn(true);
+        setIsLoggedIn(true);
         setCurrentUser(res.data);
         handleCloseModal();
       })
@@ -115,92 +98,29 @@ function App() {
     setCurrentUser(null);
   };
 
-  
-  // const handleCardLike = ({ id, isLiked }) => {
-    // const updatedCard = cards.map((item) => {
-    //   if (item.id === id) {
-    //     return {...item, isLiked };
-    //   }
-    //   return item;
-    // })
-  //   const jwt= localStorage.getItem("jwt");
-  //   // Check if this card is not currently liked
-  //   !isLiked
-  //     ? // if so, send a request to add the user's id to the card's likes array
-  //       //api
-  //         // the first argument is the card's id
-  //         addLike(id, jwt)
-  //         .then((updatedCard) => {
-  //           setClothingItems((cards) =>
-  //             cards.map((item) => (item._id === id ? updatedCard : item))
-  //           );
-  //         })
-  //         .catch((err) => console.log(err))
-  //     : // if not, send a request to remove the user's id from the card's likes array
-  //      // api
-  //         // the first argument is the card's id
-  //         removeLike(id, jwt) 
-  //         .then((updatedCard) => {
-  //           setClothingItems((cards) =>
-  //             cards.map((item) => (item._id === id ? updatedCard : item))
-  //           );
-  //         })
-  //         .catch((err) => console.log(err));
-  // };
-
-   const handleCardLike = ({ id, isLiked, currentUser }) => {
+  const handleCardLike = ({ id, isLiked, currentUser }) => {
     console.log(id);
     const jwt = localStorage.getItem("jwt");
-    if (!isLiked) { 
-    
-    addLike(id, jwt, currentUser)
-  
-    .then((card) => {
-     
-      setClothingItems((cards) => {
-     
-        return cards.map((item) => (item._id === id ? card.data : item))
-      });
-      setIsLiked(true);
-    })
-    .catch((err)=> console.log(err))
-  } else {
-    removeLike(id, jwt)
-    .then ((card) => {
-      setClothingItems((cards) => {
-        return cards.map((item) => (item._id === id ? card.data : item))
-      });
-      setIsLiked(false);
-    })
-    .catch((err)=> console.log(err));
+    if (!isLiked) {
+      addLike(id, jwt, currentUser)
+        .then((card) => {
+          setClothingItems((cards) => {
+            return cards.map((item) => (item._id === id ? card.data : item));
+          });
+          setIsLiked(true);
+        })
+        .catch((err) => console.log(err));
+    } else {
+      removeLike(id, jwt)
+        .then((card) => {
+          setClothingItems((cards) => {
+            return cards.map((item) => (item._id === id ? card.data : item));
+          });
+          setIsLiked(false);
+        })
+        .catch((err) => console.log(err));
+    }
   };
-   };
-
-   
-
-  // const  handleCheckToken = () => {
-  //   const token = localStorage.getItem('jwt');
-  //   if(token) {
-  //     return auth
-  //     .checkToken(token)
-  //     .then((user) => {
-  //       console.log(user);
-  //       setCurrentUser(user, token, true);
-  //       setIsLoggedIn(true);
-  //       return user;
-
-  //     })
-
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-  //   }
-  //   return token;
-  // };
-
-  // useEffect(() => {
-  //   handleCheckToken();
-  // }, []);
 
   useEffect(() => {
     const tokenCheck = () => {
@@ -225,7 +145,7 @@ function App() {
     tokenCheck();
   }, []);
 
- const handleCheckToken = (jwt) =>{
+  const handleCheckToken = (jwt) => {
     auth
       .checkToken(jwt)
       .then((res) => {
@@ -237,7 +157,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   useEffect(() => {
     const token = localStorage.getItem("jwt");
@@ -289,7 +209,7 @@ function App() {
   };
 
   const handleDeleteCard = () => {
-    const jwt = localStorage.getItem("jwt")
+    const jwt = localStorage.getItem("jwt");
     deleteItems(selectedCard._id, jwt)
       .then(() => {
         const newItemList = clothingItems.filter((item) => {
@@ -305,8 +225,8 @@ function App() {
 
   const handleAddItemSubmit = ({ name, weather, imageUrl }) => {
     const item = { name, imageUrl, weather };
-    const jwt= localStorage.getItem("jwt");
-    
+    const jwt = localStorage.getItem("jwt");
+
     addItem(item, jwt)
       .then((item) => {
         setClothingItems([item, ...clothingItems]);
@@ -343,10 +263,11 @@ function App() {
       });
   }, []);
 
-  
-
   return (
-    <CurrentUserContext.Provider value={{ currentUser }} isLoggedIn={isLoggedIn}>
+    <CurrentUserContext.Provider
+      value={{ currentUser }}
+      isLoggedIn={isLoggedIn}
+    >
       <div className="page">
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
@@ -366,7 +287,7 @@ function App() {
                 onSelectCard={handleSelectedCard}
                 temp={temp}
                 clothingItems={clothingItems}
-                handleCardLike= {handleCardLike}
+                handleCardLike={handleCardLike}
                 handleDeleteCard={handleDeleteCard}
               />
             </Route>
@@ -387,7 +308,7 @@ function App() {
             </ProtectedRoute>
           </Switch>
           <Footer />
-         
+
           {activeModal === "create" && (
             <AddItemModal
               handleCloseModal={handleCloseModal}
@@ -427,11 +348,10 @@ function App() {
           )}
           {activeModal === "delete" && (
             <DeleteModal
-            handleOpenDeleteModal={handleOpenDeleteModal}
-            handleCloseModal={handleCloseModal}
-            onSubmit={handleDeleteCard}
-            onDelete={selectedCard}
-            
+              handleOpenDeleteModal={handleOpenDeleteModal}
+              handleCloseModal={handleCloseModal}
+              onClick={handleDeleteCard}
+              onDelete={selectedCard}
             />
           )}
         </CurrentTemperatureUnitContext.Provider>

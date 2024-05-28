@@ -50,7 +50,7 @@ const Header = ({
               <img
                 src={currentUser?.avatar}
                 alt="avatar"
-                 className="header__avatar-user"
+                className="header__avatar-user"
               />
               <p className="header__avatar-logo-letter">
                 {currentUser?.name && currentUser?.name[0].toUpperCase()}

@@ -1,62 +1,60 @@
-
 .modal__content-delete {
-    background-color: white;
-    max-width: 670px;
-    width: 100%;
-    border-radius: 20px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    max-height: 280px;
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    position: relative;  
-    padding-bottom: 60px;
+  background-color: white;
+  max-width: 670px;
+  width: 100%;
+  border-radius: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-height: 280px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  position: relative;
+  padding-bottom: 60px;
 }
 
 .modal__buttons {
-    display: flex;
-    flex-direction: column;
-
+  display: flex;
+  flex-direction: column;
 }
 
 .modal__button-delete {
-display: flex;
-font-family: "CabinetGrotesk-Bold";
-font-size: 20px;
-font-style: normal;
-font-weight: 700;
-line-height: 24px;
-color: #ff4d00;
-border: none;
-background-color: white;
-justify-content: center;
-} 
+  display: flex;
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ff4d00;
+  border: none;
+  background-color: white;
+  justify-content: center;
+}
 
- .modal__button-cancel {
-    display: flex;
-    font-family: "CabinetGrotesk-Bold";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px; 
-    border: none;
-    background-color: white;
-    justify-content: center;
-    padding-top: 24px;
+.modal__button-cancel {
+  display: flex;
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  background-color: white;
+  justify-content: center;
+  padding-top: 24px;
 }
 
 .modal__text {
-    font-family: "CabinetGrotesk-Bold";
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 24px; 
-    max-width: 367px;
-    max-height: 48px;
-    margin-top: 60px;
-    margin-bottom: 40px;
-    margin-left: 152px;
-    margin-right: 151px;
-    text-align: center;
+  font-family: "CabinetGrotesk-Bold";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  max-width: 367px;
+  max-height: 48px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  margin-left: 152px;
+  margin-right: 151px;
+  text-align: center;
 }

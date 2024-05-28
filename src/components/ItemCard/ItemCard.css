@@ -5,7 +5,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 20px;
-  
+
   margin-top: 16px;
   background-color: white;
   border-radius: 4px;
@@ -17,12 +17,11 @@
 .card__container {
   display: flex;
   justify-content: center;
-  
 }
 
 .card {
   display: flex;
-  
+
   position: absolute;
 }
 
@@ -33,9 +32,8 @@
 }
 
 .card__like-button {
-  
   position: relative;
-  background-image: url('../../images/like.svg');
+  background-image: url("../../images/like.svg");
   width: 18px;
   height: 15px;
   border: none;
@@ -45,12 +43,11 @@
   background-repeat: no-repeat;
   background-position: center;
   top: 20px;
- 
 }
 
 .card__like-button_active {
   position: relative;
-  background-image: url('../../images/likeactive.svg');
-  
+  background-image: url("../../images/likeactive.svg");
+
   background-color: transparent;
 }
