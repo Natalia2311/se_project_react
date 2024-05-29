@@ -27,7 +27,7 @@ import Profile from "../Profile/Profile";
 
 import { defaultClotingItems } from "../../utils/constants";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import ProtectedRoute from "../../utils/ProtectedRoute";
+import ProtectedRoute from "../ProtectedRoute.js";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -38,7 +38,6 @@ function App() {
   const [clothingItems, setClothingItems] = useState(defaultClotingItems);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
-  const [isLiked, setIsLiked] = useState(false);
 
   const handleLoginModal = (email, password) => {
     auth
@@ -56,8 +55,8 @@ function App() {
       })
       .catch((err) => {
         console.error(err);
-      })
-      .finally();
+      });
+     
   };
 
   const history = useHistory();
@@ -107,7 +106,7 @@ function App() {
           setClothingItems((cards) => {
             return cards.map((item) => (item._id === id ? card.data : item));
           });
-          setIsLiked(true);
+         
         })
         .catch((err) => console.log(err));
     } else {
@@ -116,7 +115,7 @@ function App() {
           setClothingItems((cards) => {
             return cards.map((item) => (item._id === id ? card.data : item));
           });
-          setIsLiked(false);
+        
         })
         .catch((err) => console.log(err));
     }
@@ -145,20 +144,7 @@ function App() {
     tokenCheck();
   }, []);
 
-  const handleCheckToken = (jwt) => {
-    auth
-      .checkToken(jwt)
-      .then((res) => {
-        if (res && res.data) {
-          setIsLoggedIn(true);
-          setCurrentUser(res.data);
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
-
+  
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
