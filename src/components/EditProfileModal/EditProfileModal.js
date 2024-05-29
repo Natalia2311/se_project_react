@@ -9,7 +9,6 @@ const EditProfileModal = ({
   handleCloseModal,
   handleEditProfile,
   onSubmit,
-  onClose,
 }) => {
   const { currentUser } = useContext(CurrentUserContext);
 
@@ -38,10 +37,8 @@ const EditProfileModal = ({
       handleOpenEditModal={handleOpenEditModal}
       className="update"
     >
-      <div onSubmit={onSubmit} className="modal__form">
-        <button type="button" className="form__button-close" onClick={onClose}>
-          {" "}
-        </button>
+     
+      <form onSubmit={onSubmit} className="modal__form">
         <label className="modal__label-edit">
           Name*
           <input
@@ -67,6 +64,7 @@ const EditProfileModal = ({
             onChange={handleAvatarChange}
           ></input>
         </label>
+        </form>
         <button
           className="modal__submit-button-save"
           type="submit"
@@ -74,7 +72,7 @@ const EditProfileModal = ({
         >
           Save changes
         </button>
-      </div>
+     
     </ModalWithForm>
   );
 };

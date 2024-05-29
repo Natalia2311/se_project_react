@@ -13,13 +13,13 @@ export function request(baseUrl, options) {
 }
 
 export function getItemsList() {
-  return request(`${baseUrl}/items`, {
+  return fetch(`${baseUrl}/items`, {
     headers: headers,
   }).then(handleResponse);
 }
 
 export function addItem({ name, weather, imageUrl }, jwt) {
-  return request(`${baseUrl}/items`, {
+  return fetch(`${baseUrl}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export function addItem({ name, weather, imageUrl }, jwt) {
 }
 
 export function deleteItems(_id, jwt) {
-  return request(`${baseUrl}/items/${_id}`, {
+  return fetch(`${baseUrl}/items/${_id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",

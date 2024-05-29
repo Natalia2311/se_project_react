@@ -7,7 +7,7 @@ const LoginModal = ({
   onSubmit,
   handleOpenSignupModal,
   handleOpenLoginModal,
-  onClose,
+
 }) => {
   const [email, setEmail] = useState("");
   const handleEmailChange = (e) => {
@@ -38,11 +38,10 @@ const LoginModal = ({
       handleOpenLoginModal={handleOpenLoginModal}
       className="log in"
       onClick={handleOpenSignupModal}
+      
     >
-      <div onSubmit={onSubmit} className="modal__form">
-        <button type="button" className="form__button-close" onClick={onClose}>
-          {" "}
-        </button>
+     
+      <form onSubmit={onSubmit} className="modal__form">
         <label className="modal__label">
           Email
           <input
@@ -68,7 +67,7 @@ const LoginModal = ({
             onChange={handlePasswordChange}
           ></input>
         </label>
-
+</form>
         <div className="modal__button">
           <button className="modal__submit-button" type="submit">
             Log In
@@ -81,7 +80,7 @@ const LoginModal = ({
             or Sign Up
           </button>
         </div>
-      </div>
+     
     </ModalWithForm>
   );
 };

@@ -39,6 +39,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
+
   const handleLoginModal = (email, password) => {
     auth
       .login({ email, password })
@@ -188,6 +189,23 @@ function App() {
   const handleCloseModal = () => {
     setActiveModal("");
   };
+
+  useEffect(() => {
+
+    if (!activeModal) return;
+
+    const handleEscClose = (e) => {  
+      if (e.key === "Escape") {
+        handleCloseModal();
+      }
+    };
+
+    document.addEventListener("keydown", handleEscClose);
+
+    return () => {  
+      document.removeEventListener("keydown", handleEscClose);
+    };
+  }, [activeModal]);  
 
   const handleSelectedCard = (card) => {
     setActiveModal("preview");

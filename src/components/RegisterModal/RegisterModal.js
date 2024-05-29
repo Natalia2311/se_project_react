@@ -6,7 +6,7 @@ const RegisterModal = ({
   handleCloseModal,
   handleOpenLoginModal,
   onSubmit,
-  onClose,
+
 }) => {
   const [name, setName] = useState("");
   const handleNameChange = (e) => {
@@ -48,9 +48,7 @@ const RegisterModal = ({
       onClick={handleOpenLoginModal}
       handleOpenLoginModal={handleOpenLoginModal}
     >
-      <button type="button" className="form__button-close" onClick={onClose}>
-        {" "}
-      </button>
+      
 
       <form onSubmit={onSubmit} className="modal__form">
         <label className="modal__label">
