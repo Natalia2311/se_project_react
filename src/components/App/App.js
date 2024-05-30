@@ -39,7 +39,6 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [currentUser, setCurrentUser] = useState({});
 
-
   const handleLoginModal = (email, password) => {
     auth
       .login({ email, password })
@@ -57,7 +56,6 @@ function App() {
       .catch((err) => {
         console.error(err);
       });
-     
   };
 
   const history = useHistory();
@@ -107,7 +105,6 @@ function App() {
           setClothingItems((cards) => {
             return cards.map((item) => (item._id === id ? card.data : item));
           });
-         
         })
         .catch((err) => console.log(err));
     } else {
@@ -116,7 +113,6 @@ function App() {
           setClothingItems((cards) => {
             return cards.map((item) => (item._id === id ? card.data : item));
           });
-        
         })
         .catch((err) => console.log(err));
     }
@@ -145,7 +141,6 @@ function App() {
     tokenCheck();
   }, []);
 
-  
   useEffect(() => {
     const token = localStorage.getItem("jwt");
     if (token) {
@@ -191,10 +186,9 @@ function App() {
   };
 
   useEffect(() => {
-
     if (!activeModal) return;
 
-    const handleEscClose = (e) => {  
+    const handleEscClose = (e) => {
       if (e.key === "Escape") {
         handleCloseModal();
       }
@@ -202,10 +196,10 @@ function App() {
 
     document.addEventListener("keydown", handleEscClose);
 
-    return () => {  
+    return () => {
       document.removeEventListener("keydown", handleEscClose);
     };
-  }, [activeModal]);  
+  }, [activeModal]);
 
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
@@ -330,7 +324,7 @@ function App() {
           {activeModal === "signup" && (
             <RegisterModal
               handleOpenSighupModal={handleOpenSighupModal}
-              onClose={handleCloseModal}
+              handleCloseModal={handleCloseModal}
               onSubmit={handleRegisterModal}
               handleOpenLoginModal={handleOpenLoginModal}
             />
@@ -338,7 +332,7 @@ function App() {
           {activeModal === "login" && (
             <LoginModal
               handleOpenLoginModal={handleOpenLoginModal}
-              onClose={handleCloseModal}
+              handleCloseModal={handleCloseModal}
               handleOpenSignupModal={handleOpenSighupModal}
               onSubmit={handleLoginModal}
             />
@@ -346,7 +340,7 @@ function App() {
           {activeModal === "update" && (
             <EditProfileModal
               handleOpenEditModal={handleOpenEditModal}
-              onClose={handleCloseModal}
+              handleCloseModal={handleCloseModal}
               onSubmit={handleEditProfile}
             />
           )}

@@ -37,42 +37,39 @@ const EditProfileModal = ({
       handleOpenEditModal={handleOpenEditModal}
       className="update"
     >
-     
-      <form onSubmit={onSubmit} className="modal__form">
-        <label className="modal__label-edit">
-          Name*
-          <input
-            className="modal__form-input-edit"
-            name="name"
-            type="name"
-            placeholder="Name"
-            required
-            value={name}
-            onChange={handleNameChange}
-          ></input>
-        </label>
+      <label className="modal__label-edit">
+        Name*
+        <input
+          className="modal__form-input-edit"
+          name="name"
+          type="name"
+          placeholder="Name"
+          required
+          value={name}
+          onChange={handleNameChange}
+        ></input>
+      </label>
 
-        <label className="modal__label-edit">
-          Avatar*
-          <input
-            className="modal__form-input-edit"
-            name="avatar"
-            type="avatar"
-            placeholder="Avatar URL"
-            required
-            value={avatar}
-            onChange={handleAvatarChange}
-          ></input>
-        </label>
-        </form>
-        <button
-          className="modal__submit-button-save"
-          type="submit"
-          onSubmit={handleEditProfile}
-        >
-          Save changes
-        </button>
-     
+      <label className="modal__label-edit">
+        Avatar*
+        <input
+          className="modal__form-input-edit"
+          name="avatar"
+          type="avatar"
+          placeholder="Avatar URL"
+          required
+          value={avatar}
+          onChange={handleAvatarChange}
+        ></input>
+      </label>
+
+      <button
+        className="modal__submit-button-save"
+        type="submit"
+        onSubmit={handleEditProfile}
+      >
+        Save changes
+      </button>
     </ModalWithForm>
   );
 };
