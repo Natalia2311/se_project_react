@@ -1,3 +1,4 @@
+
 import "../App/App.css";
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -28,6 +29,8 @@ import Profile from "../Profile/Profile";
 import { defaultClotingItems } from "../../utils/constants";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute.js";
+
+
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
