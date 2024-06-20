@@ -129,9 +129,9 @@ function App() {
         auth
 
           .checkToken(jwt)
-          .then((res) => {
-            if (res) {
-              setCurrentUser(res.user);
+          .then((user) => {
+            if (user) {
+              setCurrentUser(user);
               setIsLoggedIn(true);
             }
           })
