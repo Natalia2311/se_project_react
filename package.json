@@ -1,7 +1,7 @@
 {
   "name": "se_project_react",
   "version": "0.1.0",
-  "homepage": "https://wtwr.polonisgroup.com",
+  "homepage": "https://Natalia2311.github.io/se_project_react",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -23,8 +23,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-   
-    "deploy": "npm run build && scp -r ./build/* nataliaberten@wtwr.polonisgroup.com:/home/nataliaberten/frontend"
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -45,6 +44,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.3.0"
   }
 }
