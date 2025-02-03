@@ -1,6 +1,6 @@
 # WTWR (What to Wear?): Front End
 
-https://Natalia2311.github.io/se_project_react
+Link to the project: https://Natalia2311.github.io/se_project_react
 
 
 The link to backend repo:
